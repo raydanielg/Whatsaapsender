@@ -1,0 +1,111 @@
+@use "../abstracts/" as *;
+
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+  width: 100%;
+  table {
+    border-collapse: collapse;
+    max-width: 100%;
+    width: 100%;
+    background-color: $card-bg;
+    > thead tr {
+      background-color: $gray-100;
+      border-block: 1px solid $color-border-light;
+      [data-bs-theme="dark"] & {
+        background-color: #1f293780;
+      }
+      > th {
+        padding: 10px 20px;
+        text-align: start;
+        white-space: nowrap;
+        font-size: 14px;
+        font-weight: 600;
+        color: $color-primary;
+      }
+    }
+
+    > tbody {
+      tr:not([hidden]) ~ :not([hidden]) {
+        --divide-y: 0;
+        border-style: solid;
+        border-top-width: calc(1px * (1 - var(--divide-y)));
+        border-bottom-width: calc(1px * var(--divide-y));
+        border-color: $color-border-light;
+      }
+      td {
+        padding: 12px 20px;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: start;
+        white-space: nowrap;
+        color: $text-secondary;
+      }
+    }
+
+    th:first-child,
+    td:first-child {
+      text-align: start;
+    }
+  }
+}
+
+// Table Filter
+.table-filter {
+  .filter-form {
+    .form-control,
+    .form-select {
+      height: 40px;
+      border-radius: $radius-8;
+      border: 1px solid $color-border;
+      -webkit-box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+      box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    }
+    .form-control {
+      padding-inline: 15px;
+      background: $color-white;
+      [data-bs-theme="dark"] & {
+        background: transparent !important;
+      }
+    }
+    .form-select {
+      -webkit-padding-start: 15px;
+      padding-inline-start: 15px;
+    }
+
+    .filter-search {
+      position: relative;
+      > input {
+        text-indent: 25px;
+      }
+      > span {
+        position: absolute;
+        inset-inline-start: 15px;
+        inset-block-start: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        color: $text-primary;
+      }
+    }
+
+    @at-root {
+      .filter-action {
+        @include flex($align: center, $gap: 15px);
+        @include sm-down {
+          @include flex($align: flex-start, $direction: column, $wrap: wrap);
+        }
+        .filter-action-btn {
+          @include flex($align: center, $gap: 10px);
+          height: 40px;
+          padding-inline: 15px;
+          border-radius: $radius-8;
+          border: 1px solid $color-border;
+          background: $card-bg;
+          -webkit-box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+          box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        }
+      }
+    }
+  }
+}

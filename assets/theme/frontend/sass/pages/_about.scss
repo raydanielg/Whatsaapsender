@@ -1,0 +1,20 @@
+@use "../abstracts/" as *;
+
+.about {
+  .about-content {
+    max-width: 650px;
+    width: 100%;
+    @include lg-down {
+      max-width: 100%;
+    }
+    > p {
+      font-size: 24px;
+      @include xl-down {
+        font-size: 20px;
+      }
+      @include md-down {
+        font-size: 18px;
+      }
+    }
+  }
+}

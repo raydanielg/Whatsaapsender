@@ -1,0 +1,90 @@
+@use "../abstracts/" as *;
+
+.faqs {
+  .faq-list {
+    @include flex($align: start, $direction: column, $gap: 25px);
+    @include sm-down {
+      gap: 20px;
+    }
+    .faq-list-item {
+      width: 100%;
+      background-color: $color-white;
+      padding: 40px 75px;
+      border: 1px solid $border-primary;
+      border-radius: $radius-20;
+      @include flex($align: center, $gap: 45px);
+
+      &:nth-child(odd) {
+        -webkit-margin-end: 75px;
+                margin-inline-end: 75px;
+        @include xxl-down {
+          -webkit-margin-end: 50px;
+                  margin-inline-end: 50px;
+        }
+
+        @include xl-down {
+          -webkit-margin-end: 0;
+                  margin-inline-end: 0;
+        }
+      }
+      &:nth-child(even) {
+        -webkit-margin-start: 75px;
+                margin-inline-start: 75px;
+        @include xxl-down {
+          -webkit-margin-start: 50px;
+                  margin-inline-start: 50px;
+        }
+
+        @include xl-down {
+          -webkit-margin-start: 0;
+                  margin-inline-start: 0;
+        }
+      }
+
+      @include sxxl-down {
+        padding: 30px 40px;
+        gap: 30px;
+      }
+
+      @include sm-down {
+        padding: 20px;
+        gap: 20px;
+      }
+      @include xs-down {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+      }
+
+      .faq-list-icon {
+        display: inline-block;
+        @include sm-down {
+          @include square(40px);
+        }
+      }
+
+      .faq-list-content {
+        > span {
+          font-size: 26px;
+          font-weight: 600;
+          color: $text-primary;
+          @include xxl-down {
+            font-size: 20px;
+          }
+        }
+        > p {
+          font-size: 20px;
+          @include xxl-down {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@use "../abstracts/" as *;
+
+.ck-editor {
+  .ck-toolbar {
+    background: var(--bs-body-bg) !important;
+    border-start-start-radius: $radius-8 !important;
+    border-start-end-radius: $radius-8 !important;
+    border: 1px solid $color-border !important;
+    .ck-toolbar__items {
+      > .ck.ck-button:not(.ck-disabled):hover,
+      > a.ck.ck-button:not(.ck-disabled):hover {
+        background: $card-bg;
+      }
+
+      > .ck-button.ck-on:focus:not(.ck-switchbutton):not(.ck-disabled) {
+        border-color: $color-primary !important;
+      }
+    }
+
+    .ck.ck-dropdown__panel {
+      background: $card-bg !important;
+      border: 1px solid $color-border;
+      .ck.ck-list {
+        background: $card-bg;
+      }
+      .ck-button.ck-on {
+        background: $color-primary !important;
+      }
+      .ck-button.ck-on:hover:not(.ck-disabled) {
+        background: $color-primary !important;
+      }
+    }
+  }
+
+  .ck-reset_all :not(.ck-reset_all-excluded *),
+  .ck.ck-reset_all {
+    [data-bs-theme="dark"] & {
+      color: $text-secondary;
+    }
+  }
+
+  .ck.ck-editor__main > .ck-editor__editable {
+    background: var(--bs-body-bg) !important;
+    border-end-start-radius: $radius-8 !important;
+    border-end-end-radius: $radius-8 !important;
+  }
+
+  .ck.ck-editor__editable_inline {
+    border: 1px solid $color-border !important;
+    border-top: 0 !important;
+    [data-bs-theme="dark"] & {
+      color: $text-secondary;
+    }
+  }
+
+  .ck.ck-input {
+    background: $card-bg;
+    border: 1px solid $color-border;
+  }
+}

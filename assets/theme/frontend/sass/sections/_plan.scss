@@ -1,0 +1,155 @@
+@use "../abstracts/" as *;
+
+.plan {
+  position: relative;
+  .plan-card-wrapper {
+    @include xl-up {
+      border: 1px solid $border-primary;
+      border-radius: $radius-20;
+    }
+    @include lg-down {
+      &:is(.mt-130) {
+        -webkit-margin-before: 25px;
+        margin-block-start: 25px;
+      }
+    }
+
+    @at-root {
+      .plan-card {
+        padding-inline: 40px;
+        padding-block: 35px 40px;
+        position: relative;
+        @include xl-down {
+          padding: 20px;
+          border: 1px solid $border-primary;
+          border-radius: $radius-20;
+        }
+        &:is(.recommend) {
+          background-color: $color-white;
+          @include lg-down {
+            border-start-start-radius: 0;
+            border-start-end-radius: 0;
+          }
+          @include lg-up {
+            border-inline: 1px solid $border-primary;
+          }
+        }
+        &:not(.recommend) {
+          overflow: hidden;
+          &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: $color-white;
+            inset: 0;
+            overflow: hidden;
+            border: $radius-16;
+            z-index: -1;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: opacity 0.3s ease-in-out;
+            -o-transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
+          }
+          &:hover {
+            &::after {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+
+        .plan-title {
+          font-size: 32px;
+          font-weight: 500;
+          color: $text-primary;
+          -webkit-padding-start: 25px;
+          padding-inline-start: 25px;
+          line-height: 1.2;
+        }
+        .price {
+          margin-block: 15px;
+          @include flex($align: end, $gap: 8px);
+          > span {
+            font-size: 28px;
+            font-weight: 600;
+            color: $text-primary;
+          }
+          > h5 {
+            font-size: 50px;
+            font-weight: 600;
+            line-height: 1.1;
+          }
+          > p {
+            font-size: 24px;
+          }
+        }
+
+        .pricing-list {
+          margin-top: 10px;
+          li {
+            font-size: 18px;
+            color: $text-primary;
+            border-bottom: 1px solid $border-secondary;
+            padding-block: 20px;
+            line-height: 1.2;
+            @include lg-down {
+              font-size: 16px;
+            }
+            > i {
+              font-size: 18px;
+              -webkit-margin-end: 10px;
+              margin-inline-end: 10px;
+            }
+          }
+
+          margin-bottom: 180px;
+          @include sxxl-down {
+            margin-bottom: 150px;
+          }
+          @include md-down {
+            margin-bottom: 80px;
+          }
+        }
+
+        .plan-action {
+          position: absolute;
+          bottom: 0;
+          inset-inline: 0;
+          width: 100%;
+          padding-inline: 40px;
+          padding-block-end: 40px;
+          @include xl-down {
+            padding-inline: 20px;
+            padding-block-end: 20px;
+          }
+          .i-btn.btn--xl {
+            display: inline-block;
+            padding: 18px 0;
+            font-size: 18px;
+          }
+        }
+
+        .recommend-tag {
+          background: $color-gradient;
+          color: $color-primary-text;
+          height: 45px;
+          width: calc(100% + 2px);
+          line-height: 45px;
+          font-size: 14px;
+          position: absolute;
+          inset-inline: -1px;
+          inset-block-start: -45px;
+          border-start-start-radius: $radius-20;
+          border-start-end-radius: $radius-20;
+          border: 1px solid $border-primary;
+          border-bottom: none;
+          text-align: center;
+          text-decoration: underline;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

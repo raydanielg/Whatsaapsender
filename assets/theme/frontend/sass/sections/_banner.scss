@@ -1,0 +1,301 @@
+@use "../abstracts/" as *;
+
+.banner {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  .banner-wrapper {
+    background-color: $card-bg;
+    border-radius: 50px;
+    overflow: hidden;
+    padding-inline: 60px;
+    padding-block: 40px;
+    position: relative;
+    @include xxl {
+      padding-inline: 60px 40px;
+    }
+    @include lg {
+      padding: 60px;
+    }
+    @include lg-down {
+      border-radius: 20px;
+    }
+    @include md {
+      padding: 30px;
+    }
+    @include md-down {
+      padding: 30px 20px;
+    }
+
+    @at-root {
+      .banner-content {
+        position: relative;
+        .banner-title {
+          font-size: 95px;
+          -webkit-margin-after: 20px;
+                  margin-block-end: 20px;
+          font-weight: 600;
+          position: relative;
+          @include sxxl-down {
+            font-size: 70px;
+          }
+          @include sm-down {
+            font-size: 40px;
+          }
+          .banner-title-shape {
+            -webkit-margin-start: 20px;
+                    margin-inline-start: 20px;
+          }
+        }
+        .banner-description {
+          font-size: 16px;
+          line-height: 28.8px;
+          color: $text-light;
+          font-weight: 500;
+          max-width: 90%;
+          @include sm-down {
+            font-size: 15px;
+          }
+        }
+
+        .banner-actions {
+          margin-top: 40px;
+          @include flex($align: center, $gap: 20px 40px, $wrap: wrap);
+          .work-btn {
+            color: $text-light;
+            font-weight: 600;
+            text-underline-offset: 4px;
+            text-decoration: underline;
+            text-transform: uppercase;
+            -webkit-transition: 0.2s ease-in;
+            -o-transition: 0.2s ease-in;
+            transition: 0.2s ease-in;
+            &:hover {
+              background: -webkit-linear-gradient(
+                102deg,
+                #ffa360 5.12%,
+                #f64b4d 53.96%
+              );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              -webkit-text-decoration-color: $color-primary;
+                      text-decoration-color: $color-primary;
+            }
+          }
+        }
+
+        @at-root {
+          .overall-user {
+            padding-top: 90px;
+            @include flex($align: center, $gap: 20px, $wrap: wrap);
+            @include sxxl-down {
+              padding-top: 60px;
+            }
+            @include md-down {
+              padding-top: 40px;
+            }
+            .avatar-group {
+              -ms-flex-negative: 0;
+                  flex-shrink: 0;
+            }
+            .user-content {
+              > h6 {
+                color: $text-light;
+                font-weight: 700;
+                font-size: 16px;
+                font-family: $font-primary;
+              }
+              > p {
+                color: $text-light;
+                font-weight: 300;
+              }
+            }
+          }
+        }
+
+        .providers {
+          margin-top: 50px;
+          @include lg-down {
+            margin-top: 30px;
+          }
+          p {
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
+            color: $color-white;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .banner-right {
+        .banner-img-lg {
+          width: 100%;
+          position: relative;
+          .video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 192px;
+            width: 100%;
+            @include xl {
+              max-width: 120px;
+            }
+
+            @include md {
+              max-width: 160px;
+            }
+
+            > img {
+              @include md-down {
+                display: none;
+              }
+            }
+            .video-play-btn {
+              @include square(70px, $radius-rounded);
+              @include flex($align: center, $justify: center);
+              background-color: $color-white;
+              font-size: 38px;
+              line-height: 1;
+              color: $color-primary;
+              position: absolute;
+              top: 50%;
+              -webkit-transform: translateY(-50%);
+                  -ms-transform: translateY(-50%);
+                      transform: translateY(-50%);
+              left: 6px;
+              @include xl {
+                @include square(40px, $radius-rounded);
+                font-size: 20px;
+              }
+
+              @include lg-down {
+                @include square(50px, $radius-rounded);
+                font-size: 30px;
+              }
+            }
+          }
+
+          .banner-countdown {
+            background-color: $color-white;
+            padding: 30px 25px;
+            width: 260px;
+            border-radius: $radius-20;
+            position: absolute;
+            margin-top: -150px;
+            margin-left: -100px;
+            @include xl {
+              width: 220px;
+              padding: 20px;
+              margin-left: -35px;
+            }
+            @include xl-down {
+              margin-top: -100px;
+              margin-left: 0;
+            }
+            @include md-down {
+              width: 180px;
+              padding: 15px;
+              margin-top: -70px;
+            }
+            .countdown-text {
+              font-size: 75px;
+              font-weight: 600;
+              line-height: 1;
+              color: $text-primary;
+              @include xl {
+                font-size: 50px;
+              }
+              @include md-down {
+                font-size: 30px;
+              }
+            }
+            .countdown-progress {
+              margin-top: 25px;
+              width: 100%;
+              height: 7px;
+              background: #f0f0f0;
+              position: relative;
+              @include md-down {
+                margin-top: 15px;
+              }
+              &::before {
+                position: absolute;
+                content: "";
+                inset-inline-start: 0;
+                inset-block: 0;
+                height: 100%;
+                width: 65%;
+                background-color: #222325;
+              }
+            }
+            .countdown-star {
+              position: absolute;
+              top: -32px;
+              right: -32px;
+              @include square(65px);
+
+              @include xxl-down {
+                top: -25px;
+                right: -25px;
+                @include square(50px);
+              }
+              @include xxl-down {
+                top: -20px;
+                right: -20px;
+                @include square(40px);
+              }
+            }
+            > p {
+              @include md-down {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+
+        .banner-img-sm {
+          max-width: 600px;
+          width: 100%;
+          -webkit-margin-start: auto;
+                  margin-inline-start: auto;
+          -webkit-margin-before: 30px;
+                  margin-block-start: 30px;
+          @include xl {
+            max-width: 450px;
+          }
+
+          @include lg-down {
+            max-width: 450px;
+          }
+        }
+      }
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      @include square(130px, $radius-rounded);
+      background: $color-gradient;
+      -webkit-filter: blur(75px);
+              filter: blur(75px);
+      inset-inline-start: -10px;
+      inset-block-end: -10px;
+    }
+    .cursor-down {
+      @include square(40px, $radius-rounded);
+      @include flex($align: center, $justify: center);
+      background-color: $card-bg;
+      border: 1px solid $color-primary;
+      font-size: 23px;
+      line-height: 1;
+      cursor: pointer;
+      position: absolute;
+      inset-inline-start: 50%;
+      inset-block-end: 40px;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%);
+    }
+  }
+}

@@ -1,0 +1,164 @@
+@use "../abstracts/" as *;
+
+.footer {
+  -webkit-margin-after: 90px;
+  margin-block-end: 90px;
+  @include sxxl-down {
+    -webkit-margin-after: 60px;
+    margin-block-end: 60px;
+  }
+  @include lg-down {
+    -webkit-margin-after: 50px;
+    margin-block-end: 50px;
+  }
+  @include sm-down {
+    -webkit-margin-after: 40px;
+    margin-block-end: 40px;
+  }
+  .footer-content {
+    background-color: $card-bg;
+    padding: 100px;
+    border-radius: 50px;
+    color: $text-ternary;
+    position: relative;
+    overflow: hidden;
+    @include xxl-down {
+      padding: 60px;
+    }
+    @include lg-down {
+      padding: 40px;
+      border-radius: 20px;
+    }
+    @include sm-down {
+      padding: 30px 20px;
+    }
+    @at-root {
+      .footer-top {
+        -webkit-padding-after: 120px;
+        padding-block-end: 120px;
+        -webkit-margin-after: 85px;
+        margin-block-end: 85px;
+        -webkit-border-after: 1px dashed $border-ternary;
+        border-block-end: 1px dashed $border-ternary;
+        border-spacing: 10px;
+        @include xl-down {
+          -webkit-padding-after: 50px;
+          padding-block-end: 50px;
+          -webkit-margin-after: 50px;
+          margin-block-end: 50px;
+        }
+      }
+
+      .footer-middle {
+        .logo-wrapper {
+          max-width: 150px;
+          width: 100%;
+          display: inline-block;
+          margin-bottom: 20px;
+          > img {
+            width: 100%;
+          }
+        }
+        .footer-social {
+          -webkit-margin-before: 20px;
+          margin-block-start: 20px;
+          @include flex($align: center, $gap: 20px);
+          > li > a {
+            font-size: 18px;
+            color: $text-light;
+            line-height: 1;
+            &:hover {
+              background: $text-gradient;
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+
+        .payment-logos {
+          max-width: 350px;
+        }
+
+        .footer-nav {
+          > h6 {
+            font-size: 22px;
+            color: $text-light;
+          }
+          > ul {
+            -webkit-margin-before: 30px;
+            margin-block-start: 30px;
+            @include flex($direction: column, $gap: 15px);
+            > li {
+              > a {
+                color: $text-ternary;
+                font-size: 18px;
+                @include md-down {
+                  font-size: 16px;
+                }
+                &:hover {
+                  color: $text-light;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+
+          .contact-info {
+            -webkit-margin-before: 30px;
+            margin-block-start: 30px;
+            @include flex($direction: column, $gap: 25px);
+            > a {
+              @include flex($align: center, $gap: 10px);
+              line-height: 1.2;
+              color: $text-ternary;
+              font-size: 18px;
+              @include md-down {
+                font-size: 16px;
+              }
+              > i {
+                font-size: 20px;
+                color: $text-light;
+              }
+              &:hover {
+                color: $text-light;
+                text-decoration: underline;
+              }
+            }
+            > span {
+              @include flex($align: start, $gap: 10px);
+              color: $text-ternary;
+              font-size: 18px;
+              @include md-down {
+                font-size: 16px;
+              }
+              > i {
+                font-size: 20px;
+                color: $text-light;
+              }
+            }
+          }
+        }
+      }
+
+      .copy-right {
+        margin-top: 60px;
+        font-size: 14px;
+        @include xl-down {
+          margin-top: 40px;
+          text-align: center;
+        }
+      }
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      @include square(130px, $radius-rounded);
+      background: $color-gradient;
+      -webkit-filter: blur(75px);
+      filter: blur(75px);
+      inset-inline-start: 0;
+      inset-block-start: 0;
+    }
+  }
+}

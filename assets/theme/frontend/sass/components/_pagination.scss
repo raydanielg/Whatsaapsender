@@ -1,0 +1,79 @@
+@use "../abstracts/" as *;
+
+.pagination-wrapper {
+  -webkit-margin-before: 100px;
+  margin-block-start: 100px;
+  @include xxl-down {
+    -webkit-margin-before: 75px;
+    margin-block-start: 75px;
+  }
+  @include lg-down {
+    -webkit-margin-before: 60px;
+    margin-block-start: 60px;
+  }
+  @include md-down {
+    -webkit-margin-before: 50px;
+    margin-block-start: 50px;
+  }
+  @include flex($align: center, $justify: end, $gap: 20px, $wrap: wrap);
+  .pagination-summary {
+    font-size: 14px;
+    color: $text-secondary;
+  }
+  .pagination {
+    gap: 10px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    .page-item {
+      .page-link {
+        overflow: hidden;
+        @include square(70px, $radius-8);
+        @include flex($align: center, $justify: center);
+        font-size: 22px;
+        line-height: 22px;
+        background-color: $color-white;
+        border: 2px solid #ffebec;
+        color: $text-primary;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        @include xxl-down {
+          @include square(60px, $radius-8);
+          font-size: 18px;
+          line-height: 18px;
+        }
+
+        @include lg-down {
+          @include square(45px, $radius-8);
+          font-size: 16px;
+          line-height: 16px;
+        }
+
+        @include md-down {
+          @include square(38px, $radius-4);
+          font-size: 14px;
+          line-height: 14px;
+        }
+        &:focus {
+          color: unset;
+          background-color: unset;
+          -webkit-box-shadow: unset;
+          box-shadow: unset;
+        }
+        &:hover {
+          background: $color-gradient;
+          color: $color-primary-text;
+          border-color: #ffebec;
+        }
+      }
+
+      &.active {
+        .page-link {
+          background: $color-gradient;
+          color: $color-primary-text;
+          border-color: #ffebec;
+        }
+      }
+    }
+  }
+}

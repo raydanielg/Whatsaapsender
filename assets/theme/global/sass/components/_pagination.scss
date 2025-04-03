@@ -1,0 +1,59 @@
+@use "../abstracts/" as *;
+
+.pagination-wrapper {
+  @include flex(
+    $align: center,
+    $justify: space-between,
+    $gap: 20px,
+    $wrap: wrap
+  );
+  .pagination-summary {
+    font-size: 14px;
+    color: $text-secondary;
+  }
+  .pagination {
+    gap: 8px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    .page-item {
+      .page-link {
+        border-radius: $radius-8 !important;
+        overflow: hidden;
+        padding: 4px 12px;
+        font-size: 14px;
+        background-color: transparent;
+        border: 1px solid $color-border-light;
+        color: $color-primary;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        &:focus {
+          color: unset;
+          background-color: unset;
+          -webkit-box-shadow: unset;
+          box-shadow: unset;
+        }
+        &:hover {
+          background-color: $color-primary-light;
+          color: $color-primary;
+          border-color: $color-primary;
+        }
+      }
+
+      &.active {
+        .page-link {
+          background-color: $color-primary;
+          color: $color-primary-text;
+          border-color: $color-primary;
+        }
+      }
+
+      &:last-child,
+      &:first-child {
+        .page-link {
+          padding: 4px 9px;
+        }
+      }
+    }
+  }
+}

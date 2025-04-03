@@ -1,0 +1,37 @@
+{
+  "name": "xsender",
+  "description": "Node Express RESTful WhatsApp API For XSender",
+  "private": true,
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ."
+  },
+  "engines": {
+    "node": ">=14.5.0"
+  },
+  "dependencies": {
+    "@adiwajshing/baileys": "github:WhiskeySockets/Baileys",
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "axios": "^1.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "link-preview-js": "^3.0.4",
+    "node-cleanup": "^2.1.2",
+    "pino": "^7.10.0",
+    "qrcode": "^1.5.3",
+    "qrcode-terminal": "^0.12.0",
+    "query-string": "^7.1.1",
+    "request": "^2.88.2",
+    "sharp": "^0.30.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-xo": "^0.39.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  }
+}

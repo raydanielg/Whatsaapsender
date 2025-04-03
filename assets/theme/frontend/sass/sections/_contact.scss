@@ -1,0 +1,117 @@
+@use "../abstracts/" as *;
+
+.contact {
+  .contact-wrapper {
+    border: 1px solid $border-primary;
+    padding: 80px;
+    border-radius: 50px;
+    @include xxl-down {
+      padding: 60px;
+    }
+    @include md-down {
+      padding: 20px;
+      border-radius: $radius-20;
+      .section-title > p {
+        &.fs-24 {
+          font-size: 20px !important;
+        }
+      }
+    }
+    @include md {
+      padding: 40px;
+      border-radius: $radius-20;
+    }
+
+    .contact-form {
+      @include flex($direction: column, $gap: 30px);
+      @include xl-down {
+        gap: 25px;
+      }
+      .form-element {
+        width: 100%;
+        > .form-control {
+          border: 1px solid rgba(35, 36, 37, 0.2);
+          background-color: $color-white;
+          border-radius: $radius-8;
+          width: 100%;
+          font-size: 18px;
+          padding: 15px 20px;
+          resize: none;
+          &:not(textarea) {
+            height: 60px;
+            @include xl-down {
+              height: 62px;
+            }
+          }
+          &:focus {
+            border-color: $color-primary;
+            -webkit-box-shadow: 0 0 0 0.3rem $color-primary-soft;
+                    box-shadow: 0 0 0 0.3rem $color-primary-soft;
+          }
+          @include xl-down {
+            padding: 15px;
+            font-size: 16px;
+            border-radius: $radius-12;
+          }
+        }
+      }
+
+      .submit-btn {
+        font-size: 20px;
+        font-weight: 600;
+        padding: 20px;
+        border-radius: $radius-12;
+        @include xl-down {
+          font-size: 20px;
+          border-radius: $radius-8;
+        }
+      }
+    }
+
+    .map-wrapper {
+      width: 100%;
+      height: 350px;
+      border-radius: $radius-20;
+      overflow: hidden;
+      @include xl-down {
+        height: 350px;
+        border-radius: $radius-12;
+      }
+      > iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .contact-list {
+      -webkit-margin-after: 50px;
+              margin-block-end: 50px;
+      @include flex($align: start, $direction: column, $gap: 40px);
+      @include xl-down {
+        gap: 30px;
+      }
+      > li {
+        font-size: 24px;
+        @include flex($align: center, $gap: 25px);
+        @include xl-down {
+          gap: 20px;
+          font-size: 20px;
+        }
+        > span {
+          -ms-flex-negative: 0;
+              flex-shrink: 0;
+          @include square(58px, $radius-rounded);
+          border: 1px solid $border-primary;
+          @include flex($align: center, $justify: center);
+          font-size: 22px;
+          line-height: 18px;
+          @include xl-down {
+            @include square(48px, $radius-rounded);
+            font-size: 18px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+  }
+}

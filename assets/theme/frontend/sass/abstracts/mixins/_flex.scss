@@ -1,0 +1,104 @@
+@mixin flex-variant(
+  $display,
+  $direction: false,
+  $align: false,
+  $justify: false,
+  $wrap: false,
+  $flow: false,
+  $gap: false,
+  $column-g: false,
+  $row-g: false
+) {
+  display: $display;
+
+  @if $direction {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+  }
+
+  @if $align {
+    -webkit-box-align: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+  }
+
+  @if $justify {
+    -webkit-box-pack: $justify;
+    -ms-flex-pack: $justify;
+    justify-content: $justify;
+  }
+
+  @if $wrap {
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+  }
+
+  @if $flow {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: $flow;
+    flex-flow: $flow;
+  }
+  @if $gap {
+    gap: $gap;
+  }
+  @if $row-g {
+    row-gap: $row-g;
+  }
+  @if $column-g {
+    -webkit-column-gap: $column-g;
+    -moz-column-gap: $column-g;
+    column-gap: $column-g;
+  }
+}
+
+@mixin flex(
+  $direction: false,
+  $align: false,
+  $justify: false,
+  $wrap: false,
+  $flow: false,
+  $gap: false,
+  $row-g: false,
+  $column-g: false
+) {
+  @include flex-variant(
+    flex,
+    $direction: $direction,
+    $align: $align,
+    $justify: $justify,
+    $wrap: $wrap,
+    $flow: $flow,
+    $column-g: $column-g,
+    $row-g: $row-g,
+    $gap: $gap
+  );
+}
+
+@mixin inline-flex(
+  $direction: false,
+  $align: false,
+  $justify: false,
+  $wrap: false,
+  $flow: false,
+  $gap: false,
+  $row-g: false,
+  $column-g: false
+) {
+  @include flex-variant(
+    inline-flex,
+    $direction: $direction,
+    $align: $align,
+    $justify: $justify,
+    $wrap: $wrap,
+    $flow: $flow,
+    $column-g: $column-g,
+    $row-g: $row-g,
+    $gap: $gap
+  );
+}
+
+// To use this function, use @include to call
+// Example @include flex($direction: row, $align: center)

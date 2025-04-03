@@ -1,0 +1,85 @@
+@use "../abstracts/" as *;
+
+.message-service {
+  .service-wrapper {
+    .service-list {
+      @include md-up {
+        &:nth-child(odd) {
+          -webkit-padding-end: 30px;
+          padding-inline-end: 30px;
+          -webkit-border-end: 1px solid $border-secondary;
+          border-inline-end: 1px solid $border-secondary;
+        }
+
+        &:nth-child(even) {
+          -webkit-padding-start: 30px;
+          padding-inline-start: 30px;
+        }
+
+        &:nth-child(-n + 2) {
+          padding-block: 30px;
+          -webkit-border-after: 1px solid $border-secondary;
+          border-block-end: 1px solid $border-secondary;
+        }
+
+        &:nth-child(n + 3) {
+          padding-block: 30px;
+        }
+      }
+
+      @include md-down {
+        &:not(:last-child) {
+          -webkit-border-after: 1px solid $border-secondary;
+          border-block-end: 1px solid $border-secondary;
+          -webkit-padding-after: 10px;
+          padding-block-end: 10px;
+          -webkit-margin-after: 25px;
+          margin-block-end: 25px;
+        }
+      }
+
+      .service-card {
+        @include flex($align: start, $direction: column, $gap: 30px);
+        .service-icon {
+          @include square(60px, $radius-rounded);
+          @include flex($align: center, $justify: center);
+          background: $color-gradient;
+          color: $color-primary-text;
+          font-size: 30px;
+          line-height: 1;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+        }
+
+        .service-content {
+          > h4 {
+            font-size: 25px;
+            -webkit-margin-after: 10px;
+            margin-block-end: 10px;
+          }
+          > p {
+            font-size: 16px;
+            line-height: 32px;
+            color: #667085;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+          }
+        }
+      }
+    }
+
+    .message-service-content {
+      > p {
+        font-size: 20px;
+        @include xxl-down {
+          font-size: 18px;
+        }
+        @include sm-down {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,823 @@
+{
+    "user_auth": {
+        "builder": true,
+        "name": "User Auth",
+        "icon": "ri-id-card-line",
+        "fixed_content": {
+            "heading": "text"
+        },
+        "multiple_static_content": {
+            "item_one": {
+                "heading": "text",
+                "sub_heading": "text"
+            },
+            "item_two": {
+                "heading": "text",
+                "sub_heading": "text"
+            },
+            "item_three": {
+                "heading": "text",
+                "sub_heading": "text"
+            }
+        },
+        "element_content": {
+            "btn_name": "text",
+            "btn_url": "text"
+        }
+    },
+    "plan_breadcrumb": {
+        "builder": true,
+        "name": "Plan Breadcrumb",
+        "icon": "ri-pages-line",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text",
+            "breadcrumb_title": "text",
+            "transparent_btn_name": "text",
+            "transparent_btn_url": "text",
+            "solid_btn_name": "text",
+            "solid_btn_url": "text",
+            "images": {
+                "plan_breadcrumb_image": {
+                    "size": "1920x1080"
+                }
+            }
+        }
+    },
+    "banner": {
+        "builder": true,
+        "name": "Banner Section",
+        "icon": "ri-pages-line",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text",
+            "btn_name": "text",
+            "btn_url": "text",
+            "video_url": "text",
+            "element_heading": "text",
+            "information_card_heading": "text",
+            "information_card_sub_heading": "text",
+
+            "images": {
+                "banner_image": {
+                    "size": "1616x998"
+                },
+                "banner_second_image": {
+                    "size": "1200x490"
+                },
+                "video_button_image": {
+                    "size": "600x250"
+                }
+            }
+        },
+        "element_content": {
+            "title": "text",
+            "images": {
+                "company_logo": {
+                    "size": "325x110"
+                }
+            }
+        }
+    },
+
+    "service_menu": {
+        "builder": true,
+        "name": "Service Menu",
+        "icon": "ri-settings-line",
+        "types": {
+            "common": {
+                "name": "Common",
+                "fixed_content": {
+                    "heading": "text"
+                }
+            },
+            "sms": {
+                "name": "SMS",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "icon": "icon",
+                    "btn_name": "text",
+                    "images": {
+                        "sms_service_image": {
+                            "size": "1136x866"
+                        }
+                    }
+                },
+                "element_content": {
+                    "short_feature": "text"
+                }
+            },
+            "whatsapp": {
+                "name": "WhatsApp",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "icon": "icon",
+                    "btn_name": "text",
+                    "images": {
+                        "whatsapp_service_image": {
+                            "size": "1136x866"
+                        }
+                    }
+                },
+                "element_content": {
+                    "short_feature": "text"
+                }
+            },
+            "email": {
+                "name": "Email",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "icon": "icon",
+                    "btn_name": "text",
+                    "images": {
+                        "email_service_image": {
+                            "size": "1136x866"
+                        }
+                    }
+                },
+                "element_content": {
+                    "short_feature": "text"
+                }
+            }
+        }
+    },
+
+    "service_breadcrumb": {
+        "builder": true,
+        "name": "Service Breadcrumb",
+        "icon": "ri-settings-line",
+        "types": {
+            "common": {
+                "name": "Common",
+                "fixed_content": {
+                    "transparent_btn_name": "text",
+                    "transparent_btn_url": "text",
+                    "solid_btn_name": "text",
+                    "solid_btn_url": "text"
+                }
+            },
+            "sms": {
+                "name": "SMS",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "breadcrumb_title": "text",
+                    "images": {
+                        "service_breadcrumb_image": {
+                            "size": "1920x1080"
+                        }
+                    }
+                }
+            },
+            "whatsapp": {
+                "name": "WhatsApp",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "breadcrumb_title": "text",
+                    "images": {
+                        "service_breadcrumb_image": {
+                            "size": "1920x1080"
+                        }
+                    }
+                }
+            },
+            "email": {
+                "name": "Email",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "breadcrumb_title": "text",
+                    "images": {
+                        "service_breadcrumb_image": {
+                            "size": "1920x1080"
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    "service_overview": {
+        "builder": true,
+        "name": "Service Overview",
+        "icon": "ri-settings-line",
+        "types": {
+            "sms": {
+                "name": "SMS",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "images": {
+                        "service_overview_image": {
+                            "size": "700x525"
+                        }
+                    }
+                },
+                "multiple_static_content": {
+                    "item_one": {
+                        "heading": "text",
+                        "sub_heading": "text"
+                    },
+                    "item_two": {
+                        "heading": "text",
+                        "sub_heading": "text"
+                    },
+                    "item_three": {
+                        "heading": "text",
+                        "sub_heading": "text"
+                    },
+                    "item_four": {
+                        "heading": "text",
+                        "sub_heading": "text"
+                    }
+                }
+            },
+            "whatsapp": {
+                "name": "WhatsApp",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "textarea",
+                    "images": {
+                        "service_overview_image": {
+                            "size": "800x600"
+                        }
+                    }
+                }
+            },
+            "email": {
+                "name": "Email",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "images": {
+                        "service_overview_image": {
+                            "size": "700x525"
+                        }
+                    }
+                },
+                "multiple_static_content": {
+                    "item_one": {
+                        "heading": "text",
+                        "sub_heading": "text"
+                    },
+                    "item_two": {
+                        "heading": "text",
+                        "sub_heading": "text"
+                    },
+                    "item_three": {
+                        "heading": "text",
+                        "sub_heading": "text"
+                    },
+                    "item_four": {
+                        "heading": "text",
+                        "sub_heading": "text"
+                    }
+                }
+            }
+        }
+    },
+
+    "service_feature": {
+        "builder": true,
+        "name": "Service Feature",
+        "icon": "ri-settings-line",
+        "types": {
+            "sms": {
+                "name": "SMS",
+                "fixed_content": {
+                    "title": "text"
+                },
+                "element_content": {
+                    "heading": "text",
+                    "description": "textarea",
+                    "images": {
+                        "service_feature_image": {
+                            "size": "240x240"
+                        }
+                    }
+                }
+            },
+            "whatsapp": {
+                "name": "WhatsApp",
+                "fixed_content": {
+                    "title": "text"
+                },
+                "element_content": {
+                    "heading": "text",
+                    "description": "textarea",
+                    "images": {
+                        "service_feature_image": {
+                            "size": "240x240"
+                        }
+                    }
+                }
+            },
+            "email": {
+                "name": "Email",
+                "fixed_content": {
+                    "title": "text"
+                },
+                "element_content": {
+                    "heading": "text",
+                    "description": "textarea",
+                    "images": {
+                        "service_feature_image": {
+                            "size": "240x240"
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    "service_details": {
+        "builder": true,
+        "name": "Service Details",
+        "icon": "ri-settings-line",
+        "types": {
+            "sms": {
+                "name": "SMS",
+                "fixed_content": {
+                    "heading": "text",
+                    "images": {
+                        "service_details_image": {
+                            "size": "1010x690"
+                        }
+                    },
+                    "btn_name": "text",
+                    "btn_url": "text",
+                    "description": "textarea"
+                }
+            },
+            "whatsapp": {
+                "name": "WhatsApp",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "btn_name": "text",
+                    "btn_url": "text",
+                    "images": {
+                        "service_details_image": {
+                            "size": "1712x1170"
+                        }
+                    }
+                },
+                "element_content": {
+                    "heading": "text",
+                    "description": "textarea"
+                }
+            },
+            "email": {
+                "name": "Email",
+                "fixed_content": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "btn_name": "text",
+                    "btn_url": "text",
+                    "images": {
+                        "service_details_image": {
+                            "size": "1712x1170"
+                        }
+                    }
+                },
+                "element_content": {
+                    "heading": "text",
+                    "description": "textarea"
+                }
+            }
+        }
+    },
+
+    "service_highlight": {
+        "builder": true,
+        "name": "Service Highlight",
+        "icon": "ri-settings-line",
+        "types": {
+            "sms": {
+                "name": "SMS",
+                "fixed_content": {
+                    "heading": "text",
+                    "images": {
+                        "service_highlight_image": {
+                            "size": "1410x964"
+                        }
+                    },
+                    "btn_name": "text",
+                    "btn_url": "text",
+                    "description": "textarea"
+                },
+                "element_content": {
+                    "heading": "text"
+                }
+            },
+            "whatsapp": {
+                "name": "WhatsApp",
+                "fixed_content": {
+                    "heading": "text",
+                    "images": {
+                        "service_highlight_image": {
+                            "size": "1410x964"
+                        }
+                    },
+                    "btn_name": "text",
+                    "btn_url": "text",
+                    "description": "textarea"
+                },
+                "element_content": {
+                    "heading": "text"
+                }
+            },
+            "email": {
+                "name": "Email",
+                "fixed_content": {
+                    "heading": "text",
+                    "images": {
+                        "service_highlight_image": {
+                            "size": "1410x964"
+                        }
+                    },
+                    "btn_name": "text",
+                    "btn_url": "text",
+                    "description": "textarea"
+                },
+                "element_content": {
+                    "heading": "text"
+                }
+            }
+        }
+    },
+
+    "client": {
+        "builder": true,
+        "name": "Client Section",
+        "icon": "ri-user-voice-line",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text"
+        },
+        "multiple_static_content": {
+            "item_one": {
+                "heading": "text",
+                "sub_heading": "text"
+            },
+            "item_two": {
+                "heading": "text",
+                "sub_heading": "text"
+            }
+        }
+    },
+
+    "feature": {
+        "builder": true,
+        "name": "Feature Section",
+        "icon": "ri-sparkling-line",
+        "fixed_content": {
+            "heading": "text"
+        },
+        "element_content": {
+            "heading": "text",
+            "images": {
+                "feature_image": {
+                    "size": "978x1462"
+                }
+            },
+            "item_group": {
+                "item_one": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "btn_url": "text"
+                },
+                "item_two": {
+                    "heading": "text",
+                    "sub_heading": "text",
+                    "btn_url": "text"
+                }
+            }
+        }
+    },
+
+    "workflow": {
+        "builder": true,
+        "name": "Workflow Section",
+        "icon": "ri-flow-chart",
+        "fixed_content": {
+            "heading": "text"
+        },
+        "element_content": {
+            "heading": "text",
+            "item_group": {
+                "item_one": {
+                    "process": "text",
+                    "images": {
+                        "process_image": {
+                            "size": "1200x675"
+                        }
+                    }
+                },
+                "item_two": {
+                    "process": "text",
+                    "images": {
+                        "process_image": {
+                            "size": "1200x675"
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    "feedback": {
+        "builder": true,
+        "name": "Feedback Section",
+        "icon": "ri-user-2-line",
+        "fixed_content": {
+            "heading": "text"
+        },
+        "element_content": {
+            "name": "text",
+            "designation": "text",
+            "message": "textarea",
+            "images": {
+                "reviewer_image": {
+                    "size": "740x740"
+                }
+            }
+        }
+    },
+
+    "advantage": {
+        "builder": true,
+        "name": "Why Us Section",
+        "icon": "ri-lightbulb-line",
+        "multiple_static_content": {
+            "item_one": {
+                "heading": "text",
+                "sub_heading": "text"
+            },
+            "item_two": {
+                "heading": "text",
+                "sub_heading": "text"
+            },
+            "item_three": {
+                "heading": "text",
+                "sub_heading": "text"
+            },
+            "item_four": {
+                "heading": "text",
+                "sub_heading": "text"
+            },
+            "item_five": {
+                "heading": "text",
+                "sub_heading": "text"
+            }
+        },
+        "fixed_content": {
+            "heading": "text",
+            "btn_url": "text",
+            "btn_name": "text"
+        }
+    },
+
+    "faq": {
+        "builder": true,
+        "name": "FAQ Section",
+        "icon": "ri-question-line",
+        "multiple_static_content": {
+            "item_one": {
+                "heading": "text",
+                "sub_heading": "text"
+            },
+            "item_two": {
+                "heading": "text",
+                "sub_heading": "text"
+            },
+            "item_three": {
+                "heading": "text",
+                "sub_heading": "text"
+            }
+        },
+        "fixed_content": {
+            "heading": "text"
+        },
+        "element_content": {
+            "question": "text",
+            "answer": "textarea"
+        }
+    },
+
+    "plan": {
+        "builder": true,
+        "name": "Plan Section",
+        "icon": "ri-building-3-line",
+        "fixed_content": {
+            "heading": "text"
+        }
+    },
+
+    "gateway": {
+        "builder": true,
+        "name": "Gateway Section",
+        "icon": "ri-swap-2-line",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text",
+            "btn_url": "text",
+            "btn_name": "text"
+        },
+        "element_content": {
+            "name": "text",
+            "images": {
+                "gateway_image": {
+                    "size": "400x70"
+                }
+            }
+        }
+    },
+
+    "blog": {
+        "builder": true,
+        "name": "Blog Section",
+        "icon": "ri-file-list-3-line",
+        "fixed_content": {
+            "heading": "text"
+        }
+    },
+
+    "social_icon": {
+        "builder": true,
+        "name": "Social Icons",
+        "icon": "ri-add-circle-line",
+        "element_content": {
+            "title": "text",
+            "icon": "icon",
+            "url": "text"
+        }
+    },
+
+    "blog_breadcrumb": {
+        "builder": true,
+        "name": "Blog Breadcrumb",
+        "icon": "ri-file-list-3-line",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text",
+            "breadcrumb_title": "text",
+            "transparent_btn_name": "text",
+            "transparent_btn_url": "text",
+            "solid_btn_name": "text",
+            "solid_btn_url": "text",
+            "images": {
+                "blog_breadcrumb_image": {
+                    "size": "1920x1080"
+                }
+            }
+        }
+    },
+
+    "policy_pages": {
+        "builder": true,
+        "name": "Policy Pages",
+        "icon": "ri-shield-cross-line",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text",
+            "breadcrumb_title": "text",
+            "transparent_btn_name": "text",
+            "transparent_btn_url": "text",
+            "solid_btn_name": "text",
+            "solid_btn_url": "text",
+            "images": {
+                "policy_breadcrumb_image": {
+                    "size": "1920x1080"
+                }
+            }
+        },
+        "element_content": {
+            "title": "text",
+            "details": "texteditor"
+        }
+    },
+
+    "about_breadcrumb": {
+        "builder": true,
+        "name": "About Breadcrumb",
+        "icon": "ri-pages-line",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text",
+            "breadcrumb_title": "text",
+            "transparent_btn_name": "text",
+            "transparent_btn_url": "text",
+            "solid_btn_name": "text",
+            "solid_btn_url": "text",
+            "images": {
+                "about_breadcrumb_image": {
+                    "size": "1920x1080"
+                }
+            }
+        }
+    },
+
+    "about_overview": {
+        "builder": true,
+        "name": "About Overview",
+        "icon": "ri-pages-line",
+        "fixed_content": {
+            "heading": "text",
+            "description": "textarea",
+            "images": {
+                "about_overview_image": {
+                    "size": "1410x964"
+                }
+            }
+        }
+    },
+
+    "connect_section": {
+        "builder": true,
+        "name": "Connect Section",
+        "icon": "ri-pages-line",
+        "fixed_content": {
+            "heading": "text"
+        },
+        "element_content": {
+            "heading": "text",
+            "sub_heading": "text",
+            "btn_name": "text",
+            "btn_url": "text",
+            "images": {
+                "conenct_image": {
+                    "size": "200x200"
+                }
+            }
+        }
+    },
+
+    "contact_breadcrumb": {
+        "builder": true,
+        "name": "Contact Breadcrumb",
+        "icon": "ri-pages-line",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text",
+            "breadcrumb_title": "text",
+            "transparent_btn_name": "text",
+            "transparent_btn_url": "text",
+            "solid_btn_name": "text",
+            "solid_btn_url": "text",
+            "images": {
+                "contact_breadcrumb_image": {
+                    "size": "1920x1080"
+                }
+            }
+        }
+    },
+
+    "get_in_touch_section": {
+        "builder": true,
+        "name": "Contact Section",
+        "icon": "ri-pages-line",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text"
+        }
+    },
+
+    "footer": {
+        "builder": true,
+        "name": "Footer Section",
+        "icon": "ri-align-bottom",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text",
+            "btn_url": "text",
+            "btn_name": "text",
+            "images": {
+                "payment_gateway_image": {
+                    "size": "608x60"
+                }
+            }
+        }
+    },
+
+    "unsubscription_page": {
+        "builder": true,
+        "name": "Unsubscription",
+        "icon": "ri-mail-forbid-line",
+        "fixed_content": {
+            "heading": "text",
+            "sub_heading": "text",
+            "btn_url": "text",
+            "btn_name": "text",
+            "images": {
+                "unsubscription_image": {
+                    "size": "200x200"
+                }
+            }
+        }
+    }
+}

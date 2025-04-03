@@ -1,0 +1,57 @@
+@use "../abstracts/" as *;
+
+.connect {
+  .connect-wrapper {
+    background: $card-bg;
+    padding: 80px;
+    border-radius: 50px;
+    @include xxl-down {
+      padding: 60px;
+    }
+    @include md-down {
+      padding: 30px 20px;
+      border-radius: $radius-20;
+    }
+    @include md {
+      padding: 40px;
+      border-radius: $radius-20;
+    }
+    .connect-card {
+      text-align: center;
+      .connect-icon {
+        padding: 55px 65px;
+        background-color: $color-white;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin-inline: auto;
+        -webkit-margin-after: 30px;
+                margin-block-end: 30px;
+        border-radius: $radius-32;
+        @include xl-down {
+          padding: 45px 55px;
+          > img {
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+      > h5 {
+        font-size: 32px;
+        color: $text-light;
+        margin-bottom: 10px;
+        @include xl-down {
+          font-size: 22px;
+        }
+      }
+      > p {
+        font-size: 20px;
+        color: $text-light;
+        margin-bottom: 25px;
+        @include xl-down {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@use "../abstracts/" as *;
+
+.work-process {
+  .work-process-wrapper {
+    background-color: $card-bg;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 80px;
+    @include xxl-down {
+      padding: 60px;
+    }
+    @include md-down {
+      padding: 30px 20px;
+      border-radius: $radius-20;
+    }
+    @include md {
+      padding: 40px;
+      border-radius: $radius-20;
+    }
+
+    .process-card {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      gap: 30px;
+      .process-img {
+        border-radius: $radius-32;
+        overflow: hidden;
+        @include xl-down {
+          border-radius: $radius-20;
+        }
+        @include md-down {
+          border-radius: $radius-12;
+        }
+      }
+      > p {
+        font-size: 28px;
+        font-weight: 500;
+        max-width: 600px;
+        @include xxl-down {
+          font-size: 20px;
+        }
+        @include sm-down {
+          font-size: 18px;
+        }
+      }
+      &:is(.pt-100) {
+        @include lg-down {
+          -webkit-padding-before: 0;
+                  padding-block-start: 0;
+        }
+      }
+    }
+
+    .process-tab {
+      margin-top: 140px;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      border-bottom: 4px solid $border-primary;
+      @include lg-down {
+        margin-top: 80px;
+      }
+      .nav-tabs {
+        border-bottom: none;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        white-space: nowrap;
+        border-bottom: 4px solid transparent;
+        .nav-item {
+          &:first-child {
+            .nav-link {
+              -webkit-padding-start: 0;
+                      padding-inline-start: 0;
+            }
+          }
+          .nav-link {
+            font-size: 32px;
+            font-weight: 500;
+            padding: 0 28px;
+            color: $text-light;
+            border: none;
+            @include flex($align: center, $gap: 15px);
+            @include sxxl-down {
+              font-size: 24px;
+            }
+            @include lg-down {
+              font-size: 20px;
+            }
+
+            @include sm-down {
+              font-size: 15px;
+            }
+            > span {
+              font-size: 28px;
+              @include lg-down {
+                font-size: 20px;
+              }
+            }
+            &.active {
+              background-color: transparent;
+              position: relative;
+              &::after {
+                position: absolute;
+                content: "";
+                bottom: -3px;
+                width: 100%;
+                height: 4px;
+                background-color: $color-white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

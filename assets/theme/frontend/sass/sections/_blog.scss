@@ -1,0 +1,274 @@
+@use "../abstracts/" as *;
+
+.blog {
+  @at-root {
+    .blog-card {
+      .blog-img {
+        position: relative;
+        width: 100%;
+        > img {
+          width: 100%;
+          border-radius: $radius-16;
+          overflow: hidden;
+          @include sm-down {
+            border-radius: $radius-8;
+          }
+        }
+
+        > span {
+          position: absolute;
+          inset-inline-end: 25px;
+          inset-block-start: 20px;
+          color: $text-light;
+          font-size: 24px;
+          font-weight: 500;
+          @include lg-down {
+            font-size: 16px;
+          }
+        }
+      }
+      .blog-title {
+        color: $text-primary;
+        font-size: 32px;
+        -webkit-margin-before: 30px;
+                margin-block-start: 30px;
+        font-weight: 600;
+        line-height: 1.4;
+        @include flex($align: center, $gap: 30px);
+        > p {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+        @include xxl-down {
+          font-size: 26px;
+        }
+        @include md-down {
+          font-size: 22px;
+        }
+        &:hover {
+          > span > i {
+            rotate: 45deg;
+          }
+        }
+        > span {
+          @include square(72px, $radius-rounded);
+          @include flex($align: center, $justify: center);
+          -ms-flex-negative: 0;
+              flex-shrink: 0;
+          background: $color-gradient;
+          color: $color-primary-text;
+          font-size: 38px;
+          line-height: 36px;
+          > i {
+            -webkit-transition: rotate 0.2s ease-in-out;
+            -o-transition: rotate 0.2s ease-in-out;
+            transition: rotate 0.2s ease-in-out;
+          }
+
+          @include xxl-down {
+            @include square(55px, $radius-rounded);
+            font-size: 28px;
+            line-height: 26px;
+          }
+
+          @include md-down {
+            @include square(45px, $radius-rounded);
+            font-size: 22px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+
+    .blog-right {
+      @include flex($direction: column, $gap: 40px);
+      .blog-right-item {
+        > h3 {
+          font-size: 60px;
+          margin-bottom: 25px;
+          line-height: 1.1;
+          @include xxl-down {
+            font-size: 42px;
+          }
+          @include lg-down {
+            font-size: 36px;
+          }
+          @include lg-down {
+            font-size: 30px;
+          }
+        }
+
+        .search-input {
+          height: 72px;
+          border: 1px solid $border-primary;
+          border-radius: $radius-16;
+          width: 100%;
+          padding: 20px;
+          font-size: 18px;
+        }
+
+        .recent-post {
+          @include flex($direction: column);
+          > .recent-post-link {
+            padding-block: 20px;
+            &:not(:last-child) {
+              border-bottom: 1px solid $border-secondary;
+            }
+            &:is(:first-child) {
+              -webkit-padding-before: 0;
+                      padding-block-start: 0;
+            }
+            &:is(:last-child) {
+              -webkit-padding-after: 0;
+                      padding-block-end: 0;
+            }
+            &:hover {
+              > h6 {
+                text-decoration: underline;
+                -webkit-text-decoration-color: $text-secondary;
+                        text-decoration-color: $text-secondary;
+              }
+            }
+            > h6 {
+              font-size: 25px;
+              font-weight: 500;
+              color: $text-primary;
+              font-family: $text-primary;
+              @include xxl-down {
+                font-size: 22px;
+              }
+            }
+
+            .category-date {
+              -webkit-margin-before: 15px;
+                      margin-block-start: 15px;
+              @include flex($align: center, $gap: 10px);
+              line-height: 1.1;
+              .category {
+                font-size: 14px;
+                font-weight: 500;
+                color: #c67193;
+              }
+
+              .dot {
+                @include square(5px, $radius-rounded);
+                background: $text-secondary;
+              }
+
+              .date {
+                font-size: 14px;
+                color: $text-secondary;
+              }
+            }
+          }
+        }
+
+        .recent-news {
+          @include flex($direction: column);
+          .blog-card {
+            &:not(:last-child) {
+              border-bottom: 1px solid $border-secondary;
+              -webkit-padding-after: 30px;
+                      padding-block-end: 30px;
+              margin-bottom: 30px;
+            }
+            .blog-title > span {
+              @include square(60px, $radius-rounded);
+              font-size: 24px;
+              line-height: 22px;
+              @include xxl-down {
+                @include square(55px, $radius-rounded);
+              }
+
+              @include md-down {
+                @include square(45px, $radius-rounded);
+                font-size: 22px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+
+        .keywords {
+          @include flex($align: center, $gap: 15px, $wrap: wrap);
+        }
+      }
+    }
+
+    .blog-detail {
+      @at-root {
+        .detail-img {
+          width: 100%;
+          border-radius: 40px;
+          overflow: hidden;
+          aspect-ratio: 16 / 8;
+        }
+
+        .blog-detail-title {
+          font-size: 60px;
+          margin-top: 30px;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          @include xxl-down {
+            font-size: 52px;
+          }
+          @include lg-down {
+            font-size: 42px;
+          }
+          @include sm-down {
+            font-size: 32px;
+          }
+          @include xs-down {
+            font-size: 28px;
+          }
+        }
+
+        .blog-description {
+          margin-top: 40px;
+          margin-bottom: 30px;
+          padding-block: 50px;
+          border-block: 1px solid rgba(35, 36, 38, 0.46);
+          @include xxl-down {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding-block: 35px;
+          }
+          @include lg-down {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-block: 30px;
+          }
+        }
+
+        .blog-detail-footer {
+          @include flex(
+            $align: center,
+            $justify: space-between,
+            $wrap: wrap,
+            $gap: 30px
+          );
+          .blog-footer-item {
+            @include flex($align: center, $gap: 15px);
+            > h6 {
+              font-size: 18px;
+              color: $text-ternary;
+            }
+            .list {
+              @include flex($align: center, $gap: 15px, $wrap: wrap);
+              &.social {
+                i {
+                  font-size: 18px;
+                  color: $text-primary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

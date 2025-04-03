@@ -1,0 +1,491 @@
+@use "../abstracts/" as *;
+
+.form-element {
+  padding-block: 20px;
+  -webkit-border-after: 1px solid $color-border-light;
+  border-block-end: 1px solid $color-border-light;
+  .form-element-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+}
+
+.form-inner {
+  .voice-icon {
+    position: absolute;
+    inset-inline-end: 15px;
+    inset-block-end: 40px;
+    z-index: 1;
+  }
+}
+.form-action {
+  @include flex($align: center, $gap: 15px);
+  -webkit-margin-before: 25px;
+  margin-block-start: 25px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  @include flex($align: center, $gap: 10px);
+  color: $text-primary;
+
+  > span {
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+.form-control,
+.form-select {
+  height: 40px;
+  font-size: 14px;
+  border-radius: $radius-8;
+  border: 1px solid $color-border;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  [data-bs-theme="dark"] & {
+    color: $text-secondary !important;
+  }
+  &:focus {
+    border-color: $color-primary;
+    -webkit-box-shadow: 0 0 0 0.2rem $color-primary-light;
+    box-shadow: 0 0 0 0.2rem $color-primary-light;
+  }
+}
+.form-control {
+  padding-inline: 15px;
+  &::-webkit-input-placeholder {
+    color: $text-secondary;
+  }
+  &::-moz-placeholder {
+    color: $text-secondary;
+  }
+  &:-ms-input-placeholder {
+    color: $text-secondary;
+  }
+  &::-ms-input-placeholder {
+    color: $text-secondary;
+  }
+  &::placeholder {
+    color: $text-secondary;
+  }
+}
+
+.form-control[type="file"] {
+  padding-inline: 10px;
+  padding-block: 0;
+  line-height: 35px;
+}
+
+textarea.form-control {
+  height: unset;
+}
+.form-select {
+  -webkit-padding-start: 15px;
+  padding-inline-start: 15px;
+}
+
+.form-check {
+  padding-left: 1.8em;
+  margin-bottom: 0;
+  .form-check-input {
+    float: left;
+    margin-left: -1.8em;
+    width: 1.2em;
+    height: 1.2em;
+  }
+}
+
+.input-group-text {
+  background-color: $card-bg;
+  border-color: $color-border;
+  color: $text-primary;
+}
+
+.form-element-note {
+  font-size: 12px;
+  margin-top: 5px;
+  color: $text-secondary;
+  line-height: 1.3;
+}
+
+// Custom Radio button
+.radio-buttons-container {
+  @include flex($align: center, $wrap: wrap, $gap: 20px);
+  height: 40px;
+  padding-inline: 15px;
+  border-radius: $radius-8;
+  border: 1px solid $color-border;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  @at-root {
+    .radio-button {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      .radio-button-input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        &:checked + .radio-button-label .radio-button-custom {
+          -webkit-transform: translateY(-50%) scale(0.9);
+          -ms-transform: translateY(-50%) scale(0.9);
+          transform: translateY(-50%) scale(0.9);
+          border: 5px solid $color-primary;
+          color: $color-primary;
+        }
+
+        &:checked + .radio-button-label {
+          color: $color-primary;
+        }
+      }
+
+      .radio-button-label {
+        display: inline-block;
+        padding-left: 30px;
+        margin-bottom: 0;
+        position: relative;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-primary);
+        cursor: pointer;
+        -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        -o-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+
+        &:hover .radio-button-custom {
+          -webkit-transform: translateY(-50%) scale(1.2);
+          -ms-transform: translateY(-50%) scale(1.2);
+          transform: translateY(-50%) scale(1.2);
+          border-color: $color-primary;
+          -webkit-box-shadow: 0 0 10px $color-primary-light;
+          box-shadow: 0 0 10px $color-primary-light;
+        }
+      }
+
+      .radio-button-custom {
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-start: 0;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        @include square($size: 18px, $radius: $radius-rounded);
+        border: 2px solid $color-border;
+        -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        -o-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+    }
+  }
+}
+
+// Steps
+.step-wrapper {
+  @include flex($align: center, $justify: center);
+  -webkit-margin-after: 30px;
+  margin-block-end: 30px;
+  .progress-steps {
+    max-width: 290px;
+    width: 100%;
+    position: relative;
+    isolation: isolate;
+    @include flex($align: center, $justify: space-between);
+    &::before {
+      content: "";
+      position: absolute;
+      width: 95%;
+      height: 1px;
+      margin-inline: auto;
+      inset-block-start: 16px;
+      inset-inline-start: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background-color: $color-border;
+      z-index: -2;
+      [dir="rtl"] & {
+        inset-inline-end: 50%;
+        inset-inline-start: unset;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      inset-block-start: 16px;
+      inset-inline: 0;
+      z-index: -1;
+    }
+    > .step-item {
+      @include flex($align: center, $direction: column, $row-g: 10px);
+      font-size: 13px;
+      font-weight: 600;
+      &:is(.active, .activated) {
+        color: $color-primary;
+        > span {
+          border-color: $color-primary-light;
+          background-color: $color-primary;
+          color: $color-primary-text;
+        }
+      }
+      &:is(:first-child) {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+      }
+      &:is(:last-child) {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: end;
+      }
+      > span {
+        @include square(32px, $radius-rounded);
+        @include flex($align: center, $justify: center);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.1;
+        border: 2px solid $color-border;
+        background-color: $color-white;
+      }
+    }
+  }
+  &:is(.step-full-width) {
+    -webkit-margin-after: 50px;
+    margin-block-end: 50px;
+    .progress-steps {
+      max-width: 100%;
+      &::before {
+        inset-block-start: 25px;
+        height: 2px;
+      }
+      &::after {
+        inset-block-start: 25px;
+        background: $color-primary;
+        height: 2px;
+      }
+      > .step-item {
+        > span {
+          @include square(50px, $radius-rounded);
+          font-size: 14px;
+          border-color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+.step-content {
+  .step-content-item {
+    display: none;
+    &:is(.active) {
+      display: block;
+    }
+
+    .step-next-btn:is(:disabled) {
+      display: none;
+    }
+    .step-back-btn:is(:disabled) {
+      background: $gray-300;
+      cursor: default;
+      [data-bs-theme="dark"] & {
+        color: $card-bg;
+      }
+      &:hover {
+        border-color: $gray-300;
+        color: $text-primary;
+        [data-bs-theme="dark"] & {
+          color: $card-bg;
+        }
+      }
+    }
+  }
+}
+
+// FlatPicker custom styles
+.singleDate,
+.rangeDate {
+  border-start-start-radius: $radius-8 !important;
+  border-end-start-radius: $radius-8 !important;
+}
+
+.flatpickr-calendar {
+  background-color: $sidebar-bg;
+  [data-bs-theme="dark"] & {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  &.arrowTop::before,
+  &.arrowTop::after {
+    border-bottom-color: $color-primary;
+  }
+  .flatpickr-months {
+    background-color: $color-primary;
+    border-start-start-radius: $radius-4;
+    border-start-end-radius: $radius-4;
+    .flatpickr-prev-month,
+    .flatpickr-next-month {
+      color: $color-primary-text;
+      fill: $color-primary-text;
+      &:hover {
+        color: $color-primary-text;
+        svg {
+          fill: $color-primary-text;
+        }
+      }
+    }
+
+    .flatpickr-current-month {
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      color: $color-primary-text;
+
+      .flatpickr-monthDropdown-months {
+        &:hover {
+          background-color: transparent;
+        }
+        .flatpickr-monthDropdown-month {
+          background-color: $card-bg;
+          color: $text-primary;
+          &:hover {
+            background-color: $color-primary;
+            color: $color-primary-text;
+          }
+        }
+      }
+    }
+  }
+  .flatpickr-weekdays {
+    background-color: $color-primary;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 36px;
+    border-bottom: 1px solid $color-border;
+    .flatpickr-weekday {
+      cursor: default;
+      font-size: 90%;
+      background: $color-primary;
+      color: $color-primary-text;
+      line-height: 1;
+      margin: 0;
+      text-align: center;
+      display: block;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-weight: 500;
+    }
+  }
+  .flatpickr-days {
+    .flatpickr-day {
+      color: $text-primary;
+      &.prevMonthDay,
+      &.nextMonthDay {
+        color: $text-secondary;
+      }
+      &.today {
+        border-color: $color-primary !important;
+        &:hover,
+        &:focus {
+          border-color: $color-primary;
+          background: $color-primary-light;
+          color: $color-primary;
+        }
+      }
+
+      &.selected,
+      &.startRange,
+      &.endRange,
+      &.selected.inRange,
+      &.startRange.inRange,
+      &.endRange.inRange,
+      &.selected:focus,
+      &.startRange:focus,
+      &.endRange:focus,
+      &.selected:hover,
+      &.startRange:hover,
+      &.endRange:hover,
+      &.selected.prevMonthDay,
+      &.startRange.prevMonthDay,
+      &.endRange.prevMonthDay,
+      &.selected.nextMonthDay,
+      &.startRange.nextMonthDay,
+      &.endRange.nextMonthDay {
+        background: $color-primary;
+        color: $color-primary-text;
+        border-color: $color-primary;
+      }
+
+      &.inRange,
+      &.prevMonthDay.inRange,
+      &.nextMonthDay.inRange,
+      &.today.inRange,
+      &.prevMonthDay.today.inRange,
+      &.nextMonthDay.today.inRange,
+      &:hover,
+      &.prevMonthDay:hover,
+      &.nextMonthDay:hover,
+      &:focus,
+      &.prevMonthDay:focus,
+      &.nextMonthDay:focus {
+        background: $color-primary-light;
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.calendar-icon {
+  color: $color-primary-text;
+  background-color: $color-primary;
+  border: $color-primary;
+  font-size: 18px;
+}
+
+.flatpickr-time {
+  border-color: $color-border !important;
+  input,
+  .flatpickr-am-pm {
+    color: $text-primary;
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+  }
+}
+
+// Icon Picker
+
+.iconpicker-popover {
+  .popover-title {
+    background-color: var(--bs-body-bg) !important;
+    border-color: $color-border !important;
+  }
+  .iconpicker .iconpicker-items {
+    background-color: var(--bs-body-bg) !important;
+
+    .iconpicker-item {
+      -webkit-box-shadow: 0 0 0 1px $color-border !important;
+      box-shadow: 0 0 0 1px $color-border !important;
+      &:is(.bg-primary) {
+        background-color: $color-primary !important;
+        color: $color-primary-text !important;
+      }
+      &:hover:not(.iconpicker-selected) {
+        background-color: $color-primary !important;
+        color: $color-primary-text !important;
+      }
+    }
+  }
+}

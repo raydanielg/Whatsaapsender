@@ -1,0 +1,120 @@
+@use "../abstracts/" as *;
+
+.our-journey {
+  background-color: $card-bg;
+  padding-block: 42px;
+  color: $text-light;
+  .journey-content {
+    > p {
+      font-size: 20px;
+      font-weight: 600;
+      color: $text-light;
+      @include xxl {
+        font-size: 18px;
+      }
+      @include xl {
+        font-size: 18px;
+      }
+      @include xl-down {
+        font-size: 16px;
+      }
+      @include sm-down {
+        font-size: 14px;
+      }
+    }
+    > h5 {
+      margin-top: 10px;
+      font-size: 50px;
+      font-weight: 600;
+      color: $text-light;
+      @include xxl {
+        font-size: 46px;
+      }
+      @include xl {
+        font-size: 42px;
+      }
+      @include xl-down {
+        font-size: 36px;
+      }
+
+      @include sm-down {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .journey-counter {
+    @include flex($align: center, $justify: end, $gap: 120px);
+    @include xxl {
+      gap: 80px;
+    }
+    @include xl {
+      gap: 50px;
+    }
+    @include xl-down {
+      gap: 30px;
+    }
+    @include lg-down {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      gap: 50px;
+    }
+
+    @include sm-down {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: start;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      gap: 35px;
+    }
+
+    .journey-counter-item {
+      > span {
+        font-size: 64px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $text-light;
+        line-height: 1;
+        @include xxl-down {
+          font-size: 42px;
+        }
+        @include xl-down {
+          font-size: 36px;
+        }
+        @include sm-down {
+          font-size: 28px;
+        }
+      }
+      > p {
+        font-size: 20px;
+        color: $text-light;
+        @include xxl-down {
+          font-size: 18px;
+        }
+        @include xl-down {
+          font-size: 16px;
+        }
+        @include sm-down {
+          font-size: 16px;
+        }
+      }
+    }
+    .journey-counter-divider {
+      @include sm-down {
+        display: none;
+      }
+      width: 2px;
+      height: 80px;
+      display: inline-block;
+      background-color: $color-white;
+      opacity: 0.3;
+    }
+  }
+}

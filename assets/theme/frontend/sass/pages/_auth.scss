@@ -1,0 +1,305 @@
+@use "../abstracts/" as *;
+
+.auth {
+  min-height: 100dvh;
+  .auth-wrapper {
+    @at-root {
+      .auth-left {
+        background-color: $card-bg;
+        position: relative;
+        z-index: 2;
+        min-height: 100dvh;
+        height: 100%;
+        padding: 65px 70px;
+        overflow: hidden;
+        @include flex($direction: column, $justify: space-between, $gap: 50px);
+        @include xxl-down {
+          padding: 40px;
+        }
+
+        @include lg-up {
+          border-start-end-radius: 50px;
+          border-end-end-radius: 50px;
+        }
+
+        @include lg-down {
+          border-start-start-radius: 40px;
+          border-start-end-radius: 40px;
+          min-height: 100%;
+        }
+
+        @include md-down {
+          border-start-start-radius: 20px;
+          border-start-end-radius: 20px;
+          padding: 40px 20px;
+        }
+        .section-title > h3 {
+          font-size: 60px;
+          @include xxl-down {
+            font-size: 42px;
+          }
+          @include md-down {
+            font-size: 32px;
+          }
+        }
+
+        .auth-features {
+          max-width: 600px;
+          width: 100%;
+          @include flex($direction: column, $gap: 40px);
+          @include xxl-down {
+            gap: 30px;
+          }
+
+          @include md-down {
+            gap: 20px;
+          }
+          .auth-feature-item {
+            @include flex($align: start, $gap: 20px);
+            .auth-feature-icon {
+              font-size: 32px;
+              display: inline-block;
+              margin-bottom: 5px;
+            }
+            .auth-feature-info {
+              margin-top: 10px;
+              h6 {
+                font-size: 20px;
+                color: $text-light;
+                margin-bottom: 10px;
+                @include sm-down {
+                  font-size: 18px;
+                }
+              }
+
+              p {
+                color: #8996a9;
+                font-size: 16px;
+                line-height: 20px;
+                @include sm-down {
+                  font-size: 15px;
+                }
+              }
+            }
+          }
+        }
+
+        .auth-footer {
+          @include flex(
+            $align: center,
+            $justify: space-between,
+            $gap: 20px,
+            $wrap: wrap
+          );
+          .auth-nav {
+            @include flex($align: center, $gap: 20px, $wrap: wrap);
+            .auth-nav-link {
+              font-size: 18px;
+              color: #8996a9;
+              -webkit-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              transition: 0.3s ease-in-out;
+              @include md-down {
+                font-size: 16px;
+              }
+              &:hover {
+                color: $text-light;
+                text-decoration: underline;
+              }
+            }
+          }
+          .dropdown {
+            button {
+              background: transparent;
+              color: #8996a9;
+              font-size: 18px;
+              -webkit-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              transition: 0.3s ease-in-out;
+              @include flex($align: center, $gap: 10px);
+              @include md-down {
+                font-size: 16px;
+              }
+              &:hover {
+                color: $text-light;
+              }
+            }
+            .dropdown-menu {
+              border-color: #45474b;
+              max-height: 250px;
+              overflow-y: auto;
+              .dropdown-item {
+                color: $text-light;
+                &:is(.active) {
+                  background: $color-gradient;
+                  color: $color-primary-text;
+                }
+                &:hover {
+                  background: $color-gradient;
+                  color: $color-primary-text;
+                }
+              }
+            }
+          }
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: 260px;
+          height: 260px;
+          border-radius: var(--radius-rounded);
+          background: var(--color-gradient);
+          -webkit-filter: blur(75px);
+          filter: blur(75px);
+          inset-inline-start: -130px;
+          inset-block-end: -130px;
+          z-index: -1;
+          opacity: 0.5;
+        }
+      }
+
+      .auth-right {
+        padding: 40px;
+        @include sm-down {
+          padding: 40px 20px;
+        }
+        .auth-form-wrapper {
+          max-width: 480px;
+          width: 100%;
+          margin-inline: auto;
+          -webkit-margin-before: 50px;
+          margin-block-start: 50px;
+          @include sxxl-up {
+            max-width: 600px;
+          }
+          > h3 {
+            font-size: 45px;
+            margin-bottom: 30px;
+            @include xl-down {
+              font-size: 40px;
+            }
+            @include md-down {
+              font-size: 30px;
+            }
+          }
+          .auth-form {
+            @include flex($align: start, $direction: column, $gap: 25px);
+            .form-element {
+              width: 100%;
+              .form-label {
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 1.1;
+                color: $text-primary;
+              }
+              .form-control {
+                border: 1px solid #a9a9a9;
+                background-color: transparent;
+                border-radius: $radius-8;
+                width: 100%;
+                font-size: 14px;
+                line-height: 18px;
+                padding: 15px 18px;
+                resize: none;
+                &:not(textarea) {
+                  height: 45px;
+                }
+                &:focus {
+                  border-color: $color-primary;
+                  -webkit-box-shadow: 0 0 0 0.3rem $color-primary-soft;
+                  box-shadow: 0 0 0 0.3rem $color-primary-soft;
+                }
+                @include xl-down {
+                  padding: 15px;
+                  font-size: 16px;
+                  border-radius: $radius-12;
+                }
+              }
+
+              .forget-password {
+                display: inline-block;
+                margin-top: 5px;
+                font-size: 14px;
+                color: $text-secondary;
+                text-decoration: underline;
+                -webkit-transition: 0.3s ease-in-out;
+                -o-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+                &:hover {
+                  color: $color-primary;
+                }
+              }
+            }
+            .form-check {
+              padding-left: 1.8em;
+              .form-check-input {
+                @include square(18px);
+                margin-left: -1.8em;
+                accent-color: $color-primary;
+                &:focus {
+                  border-color: $color-primary;
+                  -webkit-box-shadow: 0 0 0 0.3rem $color-primary-soft;
+                  box-shadow: 0 0 0 0.3rem $color-primary-soft;
+                }
+                &:checked {
+                  background-color: $color-primary;
+                  border-color: $color-primary;
+                }
+              }
+            }
+          }
+
+          .auth-form-bottom {
+            margin-top: 35px;
+            .divider {
+              text-align: center;
+              position: relative;
+              margin-bottom: 30px;
+              z-index: 2;
+              &::after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 2px;
+                background: rgba(68, 68, 68, 0.25);
+                inset-inline-start: 0;
+                inset-block-start: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                z-index: -1;
+              }
+              > span {
+                background: $site-bg;
+                padding-inline: 22px;
+              }
+            }
+            .sign-option-btn {
+              @include flex($align: center, $justify: center, $gap: 15px);
+              background-color: $color-white;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: $radius-8;
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 24px;
+              color: $text-primary;
+              -webkit-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              transition: 0.3s ease-in-out;
+              &:hover {
+                -webkit-transform: scale(0.96);
+                -ms-transform: scale(0.96);
+                transform: scale(0.96);
+              }
+              .sign-option-logo {
+                @include square(24px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

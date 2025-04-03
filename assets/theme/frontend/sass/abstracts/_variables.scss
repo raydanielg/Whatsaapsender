@@ -1,0 +1,159 @@
+@use "./mixins/index" as *;
+@forward "typography";
+
+:root {
+  // Font family
+  --font-primary: "Overpass", sans-serif;
+  --font-secondary: "Oxanium", sans-serif;
+
+  // Theme base color start
+
+  // Color primary
+  --color-primary: #f64b4d;
+  --color-primary-soft: #f5e2db;
+  --color-primary-light: rgba(246, 75, 78, 0.4);
+  --color-primary-text: #fff;
+
+  --color-gradient: linear-gradient(
+    102deg,
+    #ffa360 5.12%,
+    #f64b4d 53.96%,
+    #f25d6d 90.8%
+  );
+
+  // Color secondary
+  --color-secondary: #ffa360;
+  --color-secondary-soft: #eefffe;
+  --color-secondary-text: #192227;
+
+  // Color success
+  --color-success: #03c988;
+  --color-success-light: rgba(35, 197, 129, 0.2);
+
+  // Color danger
+  --color-danger: #d92d20;
+  --color-danger-light: rgba(255, 37, 37, 0.15);
+
+  // Color warning
+  --color-warning: #ffc700;
+  --color-warning-light: rgba(247, 184, 75, 0.2);
+
+  // Color info
+  --color-info: #299cdb;
+  --color-info-light: rgba(84, 160, 254, 0.2);
+
+  // Color dark
+  --color-dark: #222325;
+  --color-dark-light: rgb(21, 33, 48, 0.1);
+
+  // Base text color
+  --text-primary: #232426;
+  --text-secondary: #444444;
+  --text-ternary: #9b9b9c;
+  --text-light: #ffffff;
+  --text-gradient: -webkit-linear-gradient(
+    102deg,
+    #f25d6d 5.12%,
+    #f64b4d 53.96%,
+    #ffa360 90.8%
+  );
+
+  // Border color
+  --border-primary: #94918e;
+  --border-secondary: #c4c4c4;
+  --border-ternary: #f5f6f7;
+
+  --color-white: #fff;
+  --color-gray-1: #eff2f7;
+  --gray-100: #fcfcfd;
+  --gray-200: #eaecf0;
+  --gray-300: #d0d5dd;
+  --gray-500: #667085;
+
+  // Base Layout color
+  --site-bg: #fffaf3;
+  --card-bg: #232426;
+  --topbar-bg: #fff;
+  --sidebar-bg: #e9f0ff;
+  --footer-bg: #fff;
+
+  // Base Border radius
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-28: 28px;
+  --radius-32: 32px;
+  --radius-36: 36px;
+  --radius-pill: calc(infinity * 1px);
+  --radius-rounded: 50%;
+}
+
+// SASS ROOT VARIABLES
+$font-primary: var(--font-primary);
+$font-secondary: var(--font-secondary);
+// Theme base color start
+$color-primary: var(--color-primary);
+$color-primary-soft: var(--color-primary-soft);
+$color-primary-light: var(--color-primary-light);
+$color-primary-text: var(--color-primary-text);
+$color-gradient: var(--color-gradient);
+
+$color-secondary: var(--color-secondary);
+$color-secondary-soft: var(--color-secondary-soft);
+$color-secondary-text: var(--color-secondary-text);
+
+$color-success: var(--color-success);
+$color-success-light: var(--color-success-light);
+
+$color-danger: var(--color-danger);
+$color-danger-light: var(--color-danger-light);
+
+$color-warning: var(--color-warning);
+$color-warning-light: var(--color-warning-light);
+
+$color-info: var(--color-info);
+$color-info-light: var(--color-info-light);
+
+$color-dark: var(--color-dark);
+$color-dark-light: var(--color-dark-light);
+
+// Base text color
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-ternary: var(--text-ternary);
+$text-light: var(--text-light);
+$text-gradient: var(--text-gradient);
+// Border color
+$border-primary: var(--border-primary);
+$border-secondary: var(--border-secondary);
+$border-ternary: var(--border-ternary);
+
+$color-gray-1: var(--color-gray-1);
+$gray-100: var(--gray-100);
+$gray-200: var(--gray-200);
+$gray-300: var(--gray-300);
+$gray-500: var(--gray-500);
+$color-white: var(--color-white);
+
+// Layout background
+$site-bg: var(--site-bg);
+$card-bg: var(--card-bg);
+$topbar-bg: var(--topbar-bg);
+$sidebar-bg: var(--sidebar-bg);
+$footer-bg: var(--footer-bg);
+
+// Radius
+$radius-4: var(--radius-4);
+$radius-8: var(--radius-8);
+$radius-12: var(--radius-12);
+$radius-16: var(--radius-16);
+$radius-20: var(--radius-20);
+$radius-24: var(--radius-24);
+$radius-28: var(--radius-28);
+$radius-32: var(--radius-32);
+$radius-36: var(--radius-36);
+$radius-pill: var(--radius-pill);
+$radius-rounded: var(--radius-rounded);

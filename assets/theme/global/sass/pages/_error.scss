@@ -1,0 +1,27 @@
+@use "../abstracts/" as *;
+
+.error {
+  max-height: 100dvh;
+  min-height: 100dvh;
+  height: 100%;
+  .error_background {
+    height: 100%;
+    @include flex($align: center, $justify: center, $direction: column);
+    padding-block: 100px;
+    .error_container {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      .error_text {
+        font-size: 280px;
+        font-weight: 800;
+        margin-bottom: 50px;
+        line-height: 1;
+      }
+      > h2 {
+        font-size: 48px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

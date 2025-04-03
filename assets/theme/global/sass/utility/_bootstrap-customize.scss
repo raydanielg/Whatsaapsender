@@ -1,0 +1,269 @@
+@use "../abstracts/" as *;
+
+// Modal Customizations
+.modal {
+  .modal-content {
+    -webkit-box-shadow: 0px 20px 13px 0px rgba(0, 0, 0, 0.03);
+    box-shadow: 0px 20px 13px 0px rgba(0, 0, 0, 0.03);
+    border: none;
+    .modal-header {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      text-align: center;
+      border-bottom: none;
+      position: relative;
+      padding-block: 40px 0;
+      padding-inline: 30px;
+      @include lg-down {
+        padding-inline: 20px;
+      }
+      .modal-title {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .modal-closer {
+        position: absolute;
+        inset-block-start: 10px;
+        inset-inline-end: 10px;
+      }
+    }
+
+    .modal-body {
+      min-height: 300px;
+      padding: 30px;
+      @include lg-down {
+        padding: 20px;
+      }
+    }
+
+    .modal-footer {
+      background-color: $site-bg;
+      border-color: $color-border;
+    }
+  }
+}
+
+// Action Modal Customizations
+.modal.actionModal {
+  .modal-content {
+    .modal-header {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -webkit-padding-before: 30px;
+      padding-block-start: 30px;
+      padding-inline: 30px;
+      -webkit-padding-after: 20px;
+      padding-block-end: 20px;
+      .action-icon {
+        @include square(72px, $radius-rounded);
+        @include flex($align: center, $justify: center);
+        position: relative;
+        &::after {
+          content: " ";
+          position: absolute;
+          @include square(70%, $radius-rounded);
+          inset-block-start: 50%;
+          inset-inline-start: 50%;
+          -webkit-transform: translateX(-50%) translateY(-50%);
+          -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          opacity: 0.6;
+          [dir="rtl"] & {
+            -webkit-transform: translateX(50%) translateY(-50%);
+            -ms-transform: translateX(50%) translateY(-50%);
+            transform: translateX(50%) translateY(-50%);
+          }
+        }
+        > i {
+          font-size: 24px;
+          line-height: 1;
+        }
+
+        &:is(&.danger) {
+          background-color: $color-danger-light;
+          color: $color-danger;
+          &::after {
+            background: $color-danger-light;
+          }
+        }
+
+        &:is(&.info) {
+          background-color: $color-info-light;
+          color: $color-info;
+          &::after {
+            background: $color-info-light;
+          }
+        }
+
+        &:is(&.warning) {
+          background-color: $color-warning-light;
+          color: $color-warning;
+          &::after {
+            background: $color-warning-light;
+          }
+        }
+
+        &:is(&.success) {
+          background-color: $color-success-light;
+          color: $color-success;
+          &::after {
+            background: $color-success-light;
+          }
+        }
+
+        &:is(&.dark) {
+          background-color: $color-dark-light;
+          color: $color-dark;
+          &::after {
+            background: $color-dark-light;
+          }
+        }
+      }
+    }
+    .modal-body {
+      padding-block: 0;
+      padding-inline: 30px;
+      min-height: auto;
+      @include lg-down {
+        padding-inline: 20px;
+      }
+      .action-message {
+        > h5 {
+          font-size: 18px;
+        }
+        > p {
+          font-size: 14px;
+          margin-top: 8px;
+        }
+      }
+    }
+    .modal-footer {
+      padding: 30px;
+      background-color: transparent;
+      border: none;
+      > .i-btn {
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        text-align: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// Tooltips Customizations
+.tooltip {
+  opacity: 1 !important;
+  .tooltip-inner {
+    color: $color-primary-text;
+    background-color: $color-primary;
+  }
+  &.bs-tooltip-auto {
+    &:is([data-popper-placement^="top"]) {
+      .tooltip-arrow {
+        &::before {
+          border-top-color: $color-primary !important;
+        }
+      }
+    }
+
+    &:is([data-popper-placement^="bottom"]) {
+      .tooltip-arrow {
+        &::before {
+          border-bottom-color: $color-primary !important;
+        }
+      }
+    }
+
+    &:is([data-popper-placement^="left"]) {
+      .tooltip-arrow {
+        &::before {
+          border-left-color: $color-primary !important;
+        }
+      }
+    }
+
+    &:is([data-popper-placement^="right"]) {
+      .tooltip-arrow {
+        &::before {
+          border-right-color: $color-primary !important;
+        }
+      }
+    }
+
+    &.bs-tooltip-end {
+      &:is([data-popper-placement^="right"]) {
+        .tooltip-arrow::before {
+          border-right-color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+// offcanvas
+
+.offcanvas {
+  background-color: $card-bg;
+}
+.bg-light {
+  background-color: $color-gray-1 !important;
+}
+
+// Dropdown
+.dropdown-menu {
+  -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+  box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+  background-color: $card-bg;
+  border-radius: $radius-4;
+  border: 1px solid $color-border-light;
+  -webkit-animation-name: DropDownSlide;
+  animation-name: DropDownSlide;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  line-height: 1;
+  [data-bs-theme="dark"] & {
+    border-color: $color-border-light;
+  }
+  @-webkit-keyframes DropDownSlide {
+    100% {
+      margin-top: 3px;
+    }
+
+    0% {
+      margin-top: 18px;
+    }
+  }
+
+  @keyframes DropDownSlide {
+    100% {
+      margin-top: 3px;
+    }
+
+    0% {
+      margin-top: 18px;
+    }
+  }
+
+  .dropdown-item {
+    font-size: 14px;
+    padding: 10px 15px;
+    font-size: 14px;
+    @include flex($align: center, $gap: 10px);
+    color: var(--text-primary);
+    &:hover {
+      background-color: var(--color-gray-1);
+    }
+    &:has(i) > i {
+      font-size: 16px;
+    }
+  }
+}

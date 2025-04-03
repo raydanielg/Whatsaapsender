@@ -1,0 +1,73 @@
+@use "../abstracts/" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  line-height: 1.65;
+  max-height: 100%;
+  color: $text-secondary;
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: $site-bg;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-primary;
+  margin-bottom: 0;
+  font-weight: 600;
+  font-family: $font-secondary;
+}
+
+p {
+  margin-bottom: 0;
+}
+a,
+a:active,
+a:visited,
+a:link {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+i {
+  vertical-align: middle;
+}
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+  vertical-align: middle;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  border: none;
+}
+
+figure {
+  margin-bottom: 0 !important;
+}

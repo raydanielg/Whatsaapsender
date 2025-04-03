@@ -1,0 +1,69 @@
+@use "../abstracts/" as *;
+
+.gateways {
+  .gateway-wrapper {
+    background: $card-bg;
+    padding: 80px;
+    border-radius: 50px;
+    @include xxl-down {
+      padding: 60px;
+    }
+    @include lg-down {
+      padding: 40px;
+      border-radius: 20px;
+    }
+    @include sm-down {
+      padding: 30px 20px;
+    }
+    @at-root {
+      .gateway-title {
+        font-size: 60px;
+        font-weight: 500;
+        color: $text-light;
+        margin-bottom: 80px;
+        @include sm-down {
+          font-size: 32px;
+        }
+        @include sm {
+          font-size: 42px;
+        }
+        @include md {
+          font-size: 42px;
+        }
+
+        @include lg {
+          font-size: 45px;
+        }
+      }
+      .gateway-slider {
+        .gateway-img {
+          width: 100%;
+          aspect-ratio: 16/12;
+          background: $color-white;
+          @include flex($align: center, $justify: center);
+          border-radius: $radius-20;
+          padding: 20px;
+          > img {
+            max-width: 120px;
+            @include md-down {
+              max-width: 100px;
+              width: 100%;
+            }
+          }
+        }
+      }
+      .gateway-bottom {
+        -webkit-margin-before: 100px;
+                margin-block-start: 100px;
+        margin-inline: auto;
+        max-width: 700px;
+        > p {
+          font-size: 18px;
+          color: $text-light;
+          -webkit-margin-after: 20px;
+                  margin-block-end: 20px;
+        }
+      }
+    }
+  }
+}

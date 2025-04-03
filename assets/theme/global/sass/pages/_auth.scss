@@ -1,0 +1,203 @@
+@use "../abstracts/" as *;
+
+.auth {
+  overflow-x: hidden;
+  min-height: 100dvh;
+  height: 100%;
+  @at-root {
+    .auth-left {
+      padding: 40px;
+      height: 100dvh;
+      display: grid;
+      gap: 40px;
+      -ms-flex-line-pack: justify;
+          align-content: space-between;
+      @include xxl-down {
+        height: 100%;
+        gap: 80px;
+      }
+      @include lg-down {
+        padding-inline: 20px;
+      }
+      @at-root {
+        .auth-form-wrapper {
+          max-width: 555px;
+          width: 100%;
+          margin-inline: auto;
+          .auth-form {
+            .auth-input-wrapper {
+              @include flex($align: center);
+              padding-inline: 15px;
+              padding-block: 5px;
+              border-radius: $radius-12;
+              background-color: $gray-200;
+              border: 1px solid transparent;
+              [data-bs-theme="dark"] & {
+                border-color: $color-border;
+              }
+              .form-control {
+                border: none;
+                padding-block: 0;
+                -webkit-box-shadow: none;
+                        box-shadow: none;
+                background-color: transparent;
+                &:focus {
+                  border: none;
+                  -webkit-box-shadow: none;
+                          box-shadow: none;
+                }
+              }
+              .auth-eye-icon {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+    .auth-right {
+      padding-block: 40px;
+      min-height: 100dvh;
+      height: 100%;
+      @include xl-down {
+        padding-block: 0;
+      }
+      .auth-content {
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        gap: 30px;
+        padding-inline: 30px;
+        padding-block: 50px 30px;
+        position: relative;
+        z-index: 1;
+        color: $color-white;
+        @include lg-down {
+          padding-inline: 20px;
+        }
+        .auth-bg {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          inset-block-start: 0;
+          inset-inline: 0;
+          z-index: -1;
+          border-start-start-radius: 30px;
+          border-end-start-radius: 30px;
+          overflow: hidden;
+          > img {
+            width: 100%;
+            height: 100%;
+          }
+          .auth-bg-shape {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            opacity: 0.3;
+          }
+        }
+        .auth-content-top {
+          > h2 {
+            color: $color-white !important;
+            font-size: 38px;
+            @include sm-down {
+              font-size: 30px;
+            }
+            > span {
+              display: inline-block;
+              @include square(60px);
+              > svg {
+                @include square(100%);
+              }
+            }
+          }
+        }
+
+        .auth-content-middle {
+          @include flex($align: center, $gap: 75px);
+          -webkit-margin-start: auto;
+                  margin-inline-start: auto;
+          @include lg {
+            gap: 30px;
+          }
+          @include sm-down {
+            gap: 30px;
+          }
+          > img {
+            max-width: 350px;
+            @include sxxl-up {
+              max-width: 500px;
+            }
+            @include md {
+              max-width: 380px;
+            }
+            @include sm-down {
+              max-width: 250px;
+            }
+          }
+        }
+
+        .auth-slider-wrapper {
+          border-radius: $radius-20;
+          background: rgba(255, 255, 255, 0.25);
+          -webkit-backdrop-filter: blur(5px);
+                  backdrop-filter: blur(5px);
+          padding: 30px 35px;
+          @include lg-down {
+            padding: 20px;
+          }
+          .auth-slider-item {
+            @include sxxl-up {
+              max-width: 80%;
+            }
+            .quotation-icon {
+              display: inline-block;
+              @include square(30px);
+              margin-bottom: 15px;
+              > svg {
+                fill: $color-white;
+              }
+            }
+            h6 {
+              font-weight: 500;
+              color: $color-white !important;
+            }
+          }
+          .swiper-wrapper {
+            margin-bottom: 30px;
+          }
+          .swiper-horizontal > .swiper-pagination-bullets,
+          .swiper-pagination-bullets.swiper-pagination-horizontal,
+          .swiper-pagination-custom,
+          .swiper-pagination-fraction {
+            bottom: var(--swiper-pagination-bottom, -5px);
+          }
+          .swiper-pagination {
+            text-align: start;
+            .swiper-pagination-bullet {
+              width: 70px;
+              height: 3px;
+              display: inline-block;
+              border-radius: $radius-pill;
+              background: $color-white;
+              opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+              &.swiper-pagination-bullet-active {
+                opacity: var(--swiper-pagination-bullet-opacity, 1);
+                background: $color-white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@use "../abstracts/" as *;
+
+.service-feature {
+  .feature-slider {
+    .feature-card {
+      padding: 45px;
+      background: $color-white;
+      border-radius: 40px;
+      -webkit-transform: all 0.3s ease-in-out;
+          -ms-transform: all 0.3s ease-in-out;
+              transform: all 0.3s ease-in-out;
+      @include xxl-down {
+        padding: 30px;
+        border-radius: $radius-20;
+      }
+      @include sm-down {
+        padding: 15px;
+        border-radius: $radius-16;
+      }
+      > .feature-icon {
+        @include square(68px);
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      > h4 {
+        font-size: 40px;
+        @include xxl-down {
+          font-size: 30px;
+        }
+        @include md-down {
+          font-size: 24px;
+        }
+      }
+      > p {
+        font-size: 20px;
+        line-height: 30px;
+        margin-top: 50px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        @include lg-down {
+          font-size: 16px;
+        }
+      }
+
+      &:hover {
+        background: $card-bg;
+        > h4 {
+          color: $text-light;
+        }
+        > p {
+          color: $text-light;
+        }
+      }
+    }
+    .swiper-slide-active {
+      .feature-card {
+        background: $card-bg;
+        > h4 {
+          color: $text-light;
+        }
+        > p {
+          color: $text-light;
+        }
+      }
+    }
+  }
+}
+
+.campaign-content {
+  p {
+    &:is(.fs-20) {
+      @include xl-down {
+        font-size: 18px !important;
+      }
+      @include sm-down {
+        font-size: 16px !important;
+      }
+    }
+  }
+}

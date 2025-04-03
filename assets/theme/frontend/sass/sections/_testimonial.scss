@@ -1,0 +1,65 @@
+@use "../abstracts/" as *;
+
+.testimonial {
+  .review-card {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    > p {
+      font-size: 24px;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.6;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+
+    .reviewer {
+      -webkit-margin-before: 80px;
+              margin-block-start: 80px;
+      @include flex($align: center, $gap: 20px);
+      @include xl-down {
+        -webkit-margin-before: 60px;
+                margin-block-start: 60px;
+      }
+      @include md-down {
+        -webkit-margin-before: 40px;
+                margin-block-start: 40px;
+      }
+      .reviewer-img {
+        @include square(100px, $radius-rounded);
+        overflow: hidden;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+        @include lg-down {
+          @include square(50px, $radius-rounded);
+        }
+        > img {
+          width: 100%;
+          height: 100%;
+          -o-object-fit: cover;
+             object-fit: cover;
+        }
+      }
+      .reviewer-info {
+        > h6 {
+          font-size: 26px;
+          font-weight: 600;
+          @include lg-down {
+            font-size: 18px;
+          }
+        }
+        > span {
+          font-size: 16px;
+          font-weight: 500;
+          color: $color-secondary;
+          @include lg-down {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

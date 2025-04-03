@@ -1,0 +1,74 @@
+@use "../abstracts/" as *;
+
+.avatar {
+  &-xxs {
+    @include square($size: 20px);
+  }
+  &-xs {
+    @include square($size: 25px);
+  }
+  &-sm {
+    @include square($size: 30px);
+  }
+  &-md {
+    @include square($size: 40px);
+  }
+  &-lg {
+    @include square($size: 50px);
+  }
+  &-xl {
+    @include square($size: 60px);
+  }
+  &-xxl {
+    @include square($size: 75px);
+  }
+  &-100 {
+    @include square($size: 100px);
+  }
+
+  &-title {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #405189;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 500;
+    height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  &.circle{
+    border-radius: $radius-rounded;
+    overflow: hidden;
+  }
+}
+
+.avatar-group {
+  padding-left: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  &-item {
+    margin-left: -12px;
+    border: 2px solid $card-bg;
+    border-radius: 50%;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    &:hover {
+      position: relative;
+      -webkit-transform: translateY(-2px);
+      -ms-transform: translateY(-2px);
+      transform: translateY(-2px);
+      z-index: 1;
+    }
+  }
+}

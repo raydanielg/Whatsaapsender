@@ -1,0 +1,165 @@
+@use "../abstracts/" as *;
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.card-height-100 {
+  height: 100%;
+}
+
+@include lg-up {
+  .sticky-side-div {
+    position: sticky;
+    top: calc(72px + 15px);
+  }
+}
+.w-fit-content {
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: $topbar-bg !important;
+}
+
+.space-wrap {
+  white-space: wrap;
+}
+.space-nowrap {
+  white-space: nowrap;
+}
+
+.bulk-action {
+  .form-select {
+    height: 34px;
+    font-size: 13px;
+  }
+}
+
+.w-max-content {
+  width: -webkit-max-content !important;
+  width: -moz-max-content !important;
+  width: max-content !important;
+}
+
+.apex-charts {
+  min-height: 100px !important;
+}
+.apex-charts .apexcharts-canvas {
+  margin: 0 auto;
+}
+
+.text-primary {
+  color: $color-primary !important;
+}
+
+.text-secondary {
+  color: $text-secondary !important;
+}
+
+.text-dark {
+  color: $text-primary !important;
+}
+.text-danger {
+  color: $color-danger !important;
+}
+
+.text-success {
+  color: $color-success !important;
+}
+
+.text-warning {
+  color: $color-warning !important;
+}
+
+.text-info {
+  color: $color-info !important;
+}
+
+.bg--transparent {
+  background-color: transparent !important;
+}
+.bg--danger {
+  background-color: $color-danger !important;
+}
+
+.bg--success {
+  background-color: $color-success !important;
+}
+
+.bg--warning {
+  background-color: $color-warning !important;
+}
+
+.bg--info {
+  background-color: $color-info !important;
+}
+
+.bg--danger-light {
+  background-color: $color-danger-light !important;
+}
+
+.bg--success-light {
+  background-color: $color-success-light !important;
+}
+
+.bg--warning-light {
+  background-color: $color-warning-light !important;
+}
+
+.bg--info-light {
+  background-color: $color-info-light !important;
+}
+
+.bg--primary {
+  background-color: $color-primary !important;
+}
+
+.bg--primary-light {
+  background-color: $color-primary-light !important;
+}
+
+.bg--dark {
+  background-color: $color-dark !important;
+}
+
+.bg--dark-light {
+  background-color: $color-dark-light !important;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-10 {
+  margin-top: 10px;
+}

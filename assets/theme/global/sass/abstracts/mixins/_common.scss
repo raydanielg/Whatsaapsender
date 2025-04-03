@@ -1,0 +1,59 @@
+@use "./flex" as *;
+
+@mixin transition($property: false, $duration: 0.3s, $transition: ease) {
+  -webkit-transition: $property $duration $transition;
+  -o-transition: $property $duration $transition;
+  transition: $property $duration $transition;
+}
+
+// Square
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+// Button
+@mixin button($color, $bg_color, $padding) {
+  color: $color;
+  background: $bg_color;
+  padding: $padding;
+}
+
+// Center
+@mixin item-center {
+  @include flex($align: center, $justify: center);
+}
+
+// text-gradient
+@mixin text-gradient {
+  background: -o-linear-gradient(left, #f63f7d 53.12%, #f65128 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(53.12%, #f63f7d), to(#f65128));
+  background: linear-gradient(90deg, #f63f7d 53.12%, #f65128 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+@mixin shadow-1 {
+  -webkit-box-shadow: 0 3px 15px rgba(29, 38, 38, 0.0309803922);
+  box-shadow: 0 3px 15px rgba(29, 38, 38, 0.0309803922);
+}
+
+@mixin transition-3 {
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+@mixin transition-4 {
+  -webkit-transition: 0.4s ease;
+  -o-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+@mixin transition-5 {
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}

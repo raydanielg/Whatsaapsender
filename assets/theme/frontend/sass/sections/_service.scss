@@ -1,0 +1,157 @@
+@use "../abstracts/" as *;
+
+.service {
+  .service-list {
+    @at-root {
+      .service-item {
+        &:is(:last-child) {
+          -webkit-padding-after: 0;
+                  padding-block-end: 0;
+          -webkit-border-after: none;
+                  border-block-end: none;
+        }
+
+        &:is(:first-child) {
+          -webkit-padding-before: 0;
+                  padding-block-start: 0;
+        }
+        -webkit-border-after: 1px solid $border-primary;
+                border-block-end: 1px solid $border-primary;
+        padding: 65px 0;
+        @include sm-down {
+          padding: 50px 0;
+        }
+        &:hover {
+          .service-btn {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        @at-root {
+          .service-title {
+            @include flex($align: flex-start, $gap: 25px);
+            @include sm-down {
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              gap: 20px;
+            }
+            > span {
+              display: -webkit-inline-box;
+              display: -ms-inline-flexbox;
+              display: inline-flex;
+              @include square(50px, $radius-rounded);
+              @include flex($align: center, $justify: center);
+              background: $color-gradient;
+              color: $color-primary-text;
+              line-height: 1;
+              font-size: 24px;
+              font-weight: 500;
+              -ms-flex-negative: 0;
+                  flex-shrink: 0;
+            }
+
+            > h4 {
+              font-size: 36px;
+              @include sm-down {
+                font-size: 24px;
+              }
+            }
+          }
+
+          .service-description {
+            max-width: 550px;
+            font-size: 20px;
+            margin-inline: auto;
+            @include md-down {
+              font-size: 18px;
+            }
+          }
+
+          .service-action {
+            position: relative;
+            max-height: 120px;
+            height: 100%;
+            width: 100%;
+            aspect-ratio: 16/4;
+            border-radius: $radius-pill;
+            overflow: hidden;
+            @include md {
+              width: -webkit-fit-content;
+              width: -moz-fit-content;
+              width: fit-content;
+              margin-left: 75px;
+            }
+            .service-img {
+              height: 100%;
+              width: 100%;
+              > img{
+                width: 100%;
+                height: 100%;
+                -o-object-fit: cover;
+                   object-fit: cover;
+              }
+            }
+
+            .service-btn {
+              opacity: 0;
+              visibility: hidden;
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              background: $color-gradient;
+              color: $color-primary-text;
+              z-index: 1;
+              inset: 0;
+              font-size: 30px;
+              font-weight: 500;
+              line-height: 1;
+              padding: 8px;
+              -webkit-transition: opacity 0.3s ease-in-out;
+              -o-transition: opacity 0.3s ease-in-out;
+              transition: opacity 0.3s ease-in-out;
+              @include flex($align: center, $justify: center);
+              @include xs-down {
+                font-size: 22px;
+              }
+              > p {
+                text-align: center;
+                width: 100%;
+              }
+              &:hover {
+                .service-btn-icon {
+                  > i {
+                    rotate: 45deg;
+                  }
+                }
+              }
+              .service-btn-icon {
+                @include square(85px, $radius-rounded);
+                @include flex($align: center, $justify: center);
+                background-color: $color-white;
+                color: $text-primary;
+                font-size: 40px;
+                -webkit-margin-start: auto;
+                        margin-inline-start: auto;
+                -ms-flex-negative: 0;
+                    flex-shrink: 0;
+                > i {
+                  -webkit-transition: rotate 0.3s ease-in-out;
+                  -o-transition: rotate 0.3s ease-in-out;
+                  transition: rotate 0.3s ease-in-out;
+                  line-height: 40px;
+                }
+
+                @include xs-down {
+                  @include square(60px, $radius-rounded);
+                  font-size: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

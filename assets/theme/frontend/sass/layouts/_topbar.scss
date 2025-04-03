@@ -1,0 +1,345 @@
+@use "../abstracts/" as *;
+
+.header {
+  max-width: 100%;
+  width: 100%;
+  padding-block: 30px;
+  -webkit-transition: padding 0.2s ease-in-out;
+  -o-transition: padding 0.2s ease-in-out;
+  transition: padding 0.2s ease-in-out;
+  position: relative;
+  z-index: 200;
+  @include md-down {
+    padding-block: 20px;
+  }
+  &.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    inset-block-start: 0;
+    inset-inline: 0;
+    z-index: 200;
+    background-color: $topbar-bg;
+    padding-block: 15px;
+  }
+  @at-root {
+    .header-wrapper {
+      @include flex($align: center, $justify: space-between, $gap: 70px);
+      @include xl-down {
+        gap: 35px;
+      }
+      @include lg {
+        gap: 20px;
+      }
+      @at-root {
+        .header-left {
+          @include flex($align: center, $gap: 10px);
+          .logo-wrapper {
+            max-width: 160px;
+          }
+        }
+
+        .header-middle {
+          .sidebar {
+            -webkit-transition: unset;
+            -o-transition: unset;
+            transition: unset;
+            @include lg-down {
+              position: fixed;
+              max-width: 280px;
+              width: 100%;
+              height: 100%;
+              min-height: 100dvh;
+              inset-block-start: 0;
+              inset-block-end: 0;
+              inset-inline-start: 0;
+              z-index: 300;
+              background: $color-white;
+              -webkit-transform: translateX(-105%);
+              -ms-transform: translateX(-105%);
+              transform: translateX(-105%);
+              -webkit-transition: -webkit-transform 0.3s;
+              transition: -webkit-transform 0.3s;
+              -o-transition: transform 0.3s;
+              transition: transform 0.3s;
+              transition: transform 0.3s, -webkit-transform 0.3s;
+            }
+            .sidebar-logo {
+              @include lg-up {
+                display: none;
+              }
+              @include lg-down {
+                padding: 20px 20px 15px;
+              }
+            }
+            .sidebar-menu-wrapper {
+              @include lg-down {
+                max-height: calc(100dvh - 75px);
+                height: 100%;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding: 20px;
+              }
+              > nav {
+                > ul {
+                  @include flex($align: center);
+                  @include lg-up {
+                    @include flex($align: center, $gap: 45px);
+                  }
+                  @include lg {
+                    gap: 20px;
+                  }
+                  @include lg-down {
+                    @include flex(
+                      $align: flex-start,
+                      $direction: column,
+                      $gap: 0
+                    );
+                  }
+                  li {
+                    @include lg-down {
+                      width: 100%;
+                    }
+                    > .menu-link {
+                      color: $text-primary;
+                      font-size: 18px;
+                      -webkit-transition: 0.3s ease-in-out;
+                      -o-transition: 0.3s ease-in-out;
+                      transition: 0.3s ease-in-out;
+                      @include flex($align: center, $gap: 10px);
+                      line-height: 1;
+                      padding-block: 15px;
+                      @include lg-up {
+                        &:hover + .mega-menu {
+                          -webkit-transform: none;
+                          -ms-transform: none;
+                          transform: none;
+                          z-index: 200;
+                          transform: none;
+                          visibility: visible;
+                          opacity: 1;
+                        }
+                      }
+                      > span {
+                        font-size: 14px;
+                        &:is(.rotate-180) {
+                          rotate: 180deg;
+                        }
+                      }
+                      &.active {
+                        color: $color-primary;
+                      }
+                      &:hover {
+                        color: $color-primary;
+                      }
+
+                      @include lg-down {
+                        -webkit-box-pack: justify;
+                        -ms-flex-pack: justify;
+                        justify-content: space-between;
+                        width: 100%;
+                        font-weight: 400;
+                      }
+                    }
+
+                    @at-root {
+                      .mega-menu {
+                        @include lg-up {
+                          width: 682px;
+                          position: absolute;
+                          left: 50%;
+                          top: calc(100% + 15px);
+                          -webkit-transform: translateX(-50%) !important;
+                          -ms-transform: translateX(-50%) !important;
+                          transform: translateX(-50%) !important;
+                          z-index: 1;
+                          opacity: 0;
+                          visibility: hidden;
+                          -webkit-transform-origin: 50% -50px;
+                          -ms-transform-origin: 50% -50px;
+                          transform-origin: 50% -50px;
+                          -webkit-transform: perspective(400px) rotateX(-10deg);
+                          transform: perspective(400px) rotateX(-10deg);
+                          -webkit-transition: all
+                            cubic-bezier(0.645, 0.045, 0.355, 1) 0.25s;
+                          -o-transition: all
+                            cubic-bezier(0.645, 0.045, 0.355, 1) 0.25s;
+                          transition: all cubic-bezier(0.645, 0.045, 0.355, 1)
+                            0.25s;
+                          -webkit-transition-property: opacity, visibility,
+                            -webkit-transform;
+                          transition-property: opacity, visibility,
+                            -webkit-transform;
+                          -o-transition-property: transform, opacity, visibility;
+                          transition-property: transform, opacity, visibility;
+                          transition-property: transform, opacity, visibility,
+                            -webkit-transform;
+                        }
+
+                        @include lg-down {
+                          display: grid;
+                          grid-template-rows: 0fr;
+                          -webkit-transition: grid-template-rows 0.3s ease-out;
+                          -o-transition: grid-template-rows 0.3s ease-out;
+                          transition: grid-template-rows 0.3s ease-out;
+                          transition: grid-template-rows 0.3s ease-out,
+                            -ms-grid-rows 0.3s ease-out;
+                          &:is(.show) {
+                            grid-template-rows: 1fr;
+                          }
+                        }
+
+                        @at-root {
+                          .mega-menu-wrapper {
+                            @include lg-down {
+                              overflow: hidden;
+                            }
+                            .mega-menu-inner {
+                              background-color: $site-bg;
+                              border-end-start-radius: $radius-28;
+                              border-end-end-radius: $radius-28;
+                              padding: 35px;
+                              overflow: hidden;
+                              @include lg-up {
+                                -webkit-box-shadow: 0 20px 32px -8px rgba(17, 16, 19, 0.15),
+                                  0 0 1px rgba(17, 16, 19, 0.05);
+                                box-shadow: 0 20px 32px -8px rgba(17, 16, 19, 0.15),
+                                  0 0 1px rgba(17, 16, 19, 0.05);
+                              }
+                              @include lg-down {
+                                padding: 15px;
+                                border-radius: 0;
+                              }
+
+                              .maga-menu-left {
+                                @include lg-up {
+                                  -webkit-padding-end: 30px;
+                                  padding-inline-end: 30px;
+                                  -webkit-border-end: 1px solid
+                                    rgba(103, 116, 137, 0.16);
+                                  border-inline-end: 1px solid
+                                    rgba(103, 116, 137, 0.16);
+                                }
+                                > h5 {
+                                  font-size: 18px;
+                                  margin-bottom: 20px;
+                                  letter-spacing: 0.5px;
+                                }
+                                .menu-feature {
+                                  @include flex(
+                                    $align: start,
+                                    $direction: column,
+                                    $gap: 15px
+                                  );
+                                  .menu-feature-item {
+                                    @include flex($align: start, $gap: 15px);
+                                    border: 1px solid rgba(103, 116, 137, 0.16);
+                                    padding: 15px 15px 10px;
+                                    border-radius: $radius-12;
+                                    -webkit-transition: border-color 0.3s
+                                      ease-in-out;
+                                    -o-transition: border-color 0.3s ease-in-out;
+                                    transition: border-color 0.3s ease-in-out;
+                                    background: transparent;
+                                    &:hover {
+                                      border-color: $color-primary;
+                                      .menu-feature-icon {
+                                        color: $color-primary;
+                                      }
+                                      .menu-feature-content > h6 {
+                                        color: $color-primary;
+                                      }
+                                    }
+                                    &:is(.active) {
+                                      border-color: $color-primary;
+                                      .menu-feature-icon {
+                                        color: $color-primary;
+                                      }
+                                      .menu-feature-content > h6 {
+                                        color: $color-primary;
+                                      }
+                                    }
+                                    .menu-feature-icon {
+                                      font-size: 20px;
+                                      -ms-flex-negative: 0;
+                                      flex-shrink: 0;
+                                      line-height: 1;
+                                      color: $text-primary;
+                                      -webkit-transition: color 0.3s ease-in-out;
+                                      -o-transition: color 0.3s ease-in-out;
+                                      transition: color 0.3s ease-in-out;
+                                    }
+
+                                    .menu-feature-content {
+                                      color: $text-primary;
+                                      text-align: start;
+                                      > h6 {
+                                        font-size: 17px;
+                                        -webkit-transition: color 0.3s
+                                          ease-in-out;
+                                        -o-transition: color 0.3s ease-in-out;
+                                        transition: color 0.3s ease-in-out;
+                                      }
+
+                                      > p {
+                                        font-size: 15px;
+                                        margin-top: 4px;
+                                        overflow: hidden;
+                                        -o-text-overflow: ellipsis;
+                                        text-overflow: ellipsis;
+                                        display: -webkit-box;
+                                        -webkit-line-clamp: 2;
+                                        line-clamp: 2;
+                                        -webkit-box-orient: vertical;
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+
+                              @at-root {
+                                .mega-menu-right {
+                                  @include lg-up {
+                                    -webkit-padding-start: 30px;
+                                    padding-inline-start: 30px;
+                                  }
+                                  @include lg-down {
+                                    -webkit-border-before: 1px solid
+                                      rgba(103, 116, 137, 0.16);
+                                    border-block-start: 1px solid
+                                      rgba(103, 116, 137, 0.16);
+                                    -webkit-padding-before: 35px;
+                                    padding-block-start: 35px;
+                                  }
+                                  .mega-menu-banner {
+                                    position: relative;
+                                    .menu-banner-shape {
+                                      position: absolute;
+                                      inset-inline-end: -15px;
+                                      inset-block-start: -15px;
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                        &:hover {
+                          visibility: visible;
+                          opacity: 1;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .header-right {
+          @include flex($align: center, $gap: 15px);
+        }
+      }
+    }
+  }
+}

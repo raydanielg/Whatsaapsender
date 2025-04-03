@@ -1,0 +1,118 @@
+@use "../abstracts/" as *;
+
+.why-us {
+  .why-us-wrapper {
+    background-color: $card-bg;
+    padding: 50px;
+    border-radius: 50px;
+    min-height: 850px;
+    position: relative;
+    z-index: 2;
+    @include lg-down {
+      padding: 40px;
+      border-radius: 20px;
+    }
+
+    @include md-down {
+      padding: 30px 20px;
+    }
+    .why-us-title {
+      color: $site-bg;
+      position: absolute;
+      top: calc(50% + 15px);
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      font-size: 200px;
+      font-weight: 300;
+      z-index: -1;
+      @include xxl-down {
+        top: unset;
+        left: unset;
+        right: 40px;
+        bottom: 180px;
+        font-size: 100px;
+        -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+        transform: translate(0);
+      }
+      @include xl-down {
+        font-size: 80px;
+      }
+      @include md-down {
+        position: unset;
+        margin-bottom: 50px;
+        font-size: 42px;
+        font-weight: 600;
+      }
+    }
+    @at-root {
+      .why-us-card {
+        padding: 32px;
+        background: $site-bg;
+        border-radius: $radius-20;
+        @include sm-down {
+          padding: 15px;
+        }
+        @include lg-down {
+          padding: 20px;
+        }
+
+        &:hover {
+          background: $color-gradient;
+          > span {
+            background: $color-white;
+          }
+          > h5 {
+            color: $text-light;
+          }
+          > p {
+            color: $text-light;
+          }
+        }
+
+        &.active {
+          background: $color-gradient;
+          > span {
+            background: $color-white;
+          }
+          > h5 {
+            color: $text-light;
+          }
+          > p {
+            color: $text-light;
+          }
+        }
+
+        > span {
+          display: inline-block;
+          @include square(14px, $radius-rounded);
+          background: $color-gradient;
+          margin-bottom: 25px;
+        }
+        > h5 {
+          font-size: 26px;
+          font-weight: 600;
+          margin-bottom: 50px;
+          line-height: 1.4;
+          @include lg-down {
+            font-size: 20px;
+            margin-bottom: 30px;
+          }
+        }
+        > p {
+          font-size: 16px;
+          font-weight: 500;
+          color: #878c91;
+        }
+
+        &:is(.mt-120) {
+          @include xxl-down {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

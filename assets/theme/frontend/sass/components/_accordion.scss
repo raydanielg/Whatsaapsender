@@ -1,0 +1,160 @@
+@use "../abstracts/" as *;
+
+.accordion-wrapper {
+  .accordion-item {
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-primary;
+    }
+    border: none;
+    border-radius: 0 !important;
+    overflow: hidden;
+    background: transparent;
+    .accordion-button {
+      font-weight: 600;
+      font-size: 24px;
+      background: transparent;
+      color: $text-primary;
+      font-family: $font-primary;
+      padding-block: 25px;
+      -webkit-padding-end: 40px;
+      padding-inline-end: 40px;
+      -webkit-padding-start: 18px;
+      padding-inline-start: 18px;
+      position: relative;
+      -webkit-transition: 0.3s linear;
+      -o-transition: 0.3s linear;
+      transition: 0.3s linear;
+      line-height: 1.6;
+      > i {
+        margin-right: 10px;
+        font-size: 16px;
+      }
+
+      @include md-down {
+        padding-block: 12px;
+        -webkit-padding-end: 35px;
+        padding-inline-end: 35px;
+        -webkit-padding-start: 0px;
+        padding-inline-start: 0px;
+      }
+      @include sm-down {
+        font-size: 18px;
+      }
+
+      &:focus {
+        z-index: unset;
+        border-color: unset;
+        outline: 0;
+        background: transparent;
+        -webkit-box-shadow: unset;
+        box-shadow: unset;
+        color: $text-primary;
+      }
+
+      &::after {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        width: unset;
+        height: unset;
+        margin-left: auto;
+        background-image: none;
+        background-repeat: unset;
+        background-size: unset;
+        font-family: bootstrap-icons !important;
+        font-size: 24px;
+        position: absolute;
+        inset-inline-end: 15px;
+        inset-block: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        content: "\F64D";
+        -webkit-transition: unset;
+        -o-transition: unset;
+        transition: unset;
+        color: $text-primary;
+        @include flex($align: center, $justify: center);
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        @include sm-down {
+          font-size: 15px;
+        }
+      }
+
+      &:not(.collapsed)::after {
+        background-image: none;
+        -webkit-transform: unset;
+        -ms-transform: unset;
+        transform: unset;
+        font-family: bootstrap-icons !important;
+        content: "\F63B";
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+
+      &:not(.collapsed) {
+        -webkit-box-shadow: unset;
+        box-shadow: unset;
+        background: transparent;
+      }
+    }
+    .accordion-body {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 30px;
+      text-align: left;
+      padding-inline: 25px;
+      padding-block: 0 25px;
+      background: transparent;
+      color: #878c91;
+    }
+  }
+
+  &:is(.template-accordion) {
+    .accordion-item {
+      .accordion-button {
+        -webkit-padding-start: 0;
+        padding-inline-start: 0;
+        @include xl-down {
+          padding-block: 20px;
+          font-size: 20px;
+        }
+        &::after {
+          content: "\F282";
+          inset-inline-end: 0;
+          font-size: 18px;
+          line-height: 18px;
+          @include xl-down {
+            font-size: 16px;
+          }
+        }
+        &:not(.collapsed)::after {
+          content: "\F282";
+          rotate: 180deg;
+        }
+      }
+      .accordion-body {
+        padding-inline: 0;
+        font-size: 20px;
+        color: $text-secondary;
+        @include xl-down {
+          font-size: 16px;
+        }
+      }
+      // &:is(:first-child) {
+      //   .accordion-button {
+      //     padding-block-start: 0;
+      //   }
+      // }
+
+      // &:is(:last-child) {
+      //   .accordion-button {
+      //     padding-block-end: 0;
+      //   }
+      // }
+    }
+  }
+}
